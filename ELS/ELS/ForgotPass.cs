@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace ELS
 {
-    public partial class LogIn : Form
+    public partial class ForgotPass : Form
     {
-        public LogIn()
+        public ForgotPass()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form register = new Register();
-            register.Show();
-            this.Hide();
         }
     }
 }
