@@ -72,6 +72,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ForgotPass.resx">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LendReport.resx">
+      <DependentUpon>LendReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Add User Male_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modern-material-design-full-hd-wallpaper-no-766-1920x1920.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registration_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

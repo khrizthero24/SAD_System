@@ -79,5 +79,25 @@ namespace ELS.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap modern_material_design_full_hd_wallpaper_no_766_1920x1920 {
+            get {
+                object obj = ResourceManager.GetObject("modern-material-design-full-hd-wallpaper-no-766-1920x1920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Registration_64px {
+            get {
+                object obj = ResourceManager.GetObject("Registration_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
