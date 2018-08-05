@@ -26,7 +26,6 @@ namespace ELS
                         m.Result = (IntPtr)0x2;
                     return;
             }
-
             base.WndProc(ref m);
         }
         private void button2_Click(object sender, EventArgs e)
@@ -34,6 +33,11 @@ namespace ELS
             Form register = new Register();
             register.Show();
             this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
