@@ -46,23 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BorrowerMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BorrowerMainForm.Designer.cs">
-      <DependentUpon>BorrowerMainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ForgotPass.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ForgotPass.Designer.cs">
       <DependentUpon>ForgotPass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LenderMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LenderMainForm.Designer.cs">
-      <DependentUpon>LenderMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LendReport.cs">
       <SubType>Form</SubType>
@@ -84,14 +72,8 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BorrowerMainForm.resx">
-      <DependentUpon>BorrowerMainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ForgotPass.resx">
       <DependentUpon>ForgotPass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LenderMainForm.resx">
-      <DependentUpon>LenderMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LendReport.resx">
       <DependentUpon>LendReport.cs</DependentUpon>
@@ -138,7 +120,13 @@
     <None Include="Resources\Registration_64px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Tick Box_64px.png" />
+    <None Include="Resources\ShowHide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowHide1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowHide2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
