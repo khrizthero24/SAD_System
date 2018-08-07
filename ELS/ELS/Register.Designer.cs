@@ -134,7 +134,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ELS.Properties.Resources.Registration_64px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(301, 505);
+            this.button1.Location = new System.Drawing.Point(301, 492);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 65);
             this.button1.TabIndex = 11;
