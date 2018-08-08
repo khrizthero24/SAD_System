@@ -17,13 +17,21 @@ namespace ELS
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-            if(usertxt.Text != null && passtxt.Text != null && conpasstxt.Text != null && idnumtxt.Text != null && acctcmb.SelectedIndex != -1)
-            {
-                usertxt.Text = "POGI MO!";
+            if((string.IsNullOrEmpty(usertxt.Text)) || (string.IsNullOrEmpty(passtxt.Text)) || (string.IsNullOrEmpty(conpasstxt.Text)) || (string.IsNullOrEmpty(idnumtxt.Text))
+                || (string.IsNullOrEmpty(acctcmb.Text)))
+            {          
+                usertxt.Text = "MAY KULANG KA!";
             }
             else
             {
-                usertxt.Text = "MAY KULANG KA!";
+                if (passtxt.Text == conpasstxt.Text)
+                {
+                    //REGISTER
+                }
+                else
+                {
+                    usertxt.Text = "DI NAG MATCH PASSWORD AND CONFIRM PASS";
+                }
             }
         }
 
