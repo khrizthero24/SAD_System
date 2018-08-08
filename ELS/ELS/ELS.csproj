@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AES_Encryption.cs" />
     <Compile Include="BorrowerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Registration_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tick Box_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
