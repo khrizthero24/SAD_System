@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ELS
 {
-    public partial class LogIn : Form
+    public partial class BorrowerMainForm : Form
     {
-        public LogIn()
+        public BorrowerMainForm()
         {
             InitializeComponent();
+            selectPanel.Height = button1.Height;
+            selectPanel.Top = button1.Top;
+        }
+
+        private void BorrowerMainForm_Load(object sender, EventArgs e)
+        {
+
         }
         protected override void WndProc(ref Message m)
         {
@@ -26,18 +33,19 @@ namespace ELS
                         m.Result = (IntPtr)0x2;
                     return;
             }
+
             base.WndProc(ref m);
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Form register = new Register();
-            register.Show();
-            this.Hide();
+            selectPanel.Height = button1.Height;
+            selectPanel.Top = button1.Top;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            selectPanel.Height = button2.Height;
+            selectPanel.Top = button2.Top;
         }
     }
 }
