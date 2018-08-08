@@ -71,6 +71,8 @@
             this.button3.TabIndex = 6;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
+            this.button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button3_MouseUp);
             // 
             // registerbtn
             // 
@@ -112,6 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passtxt.Location = new System.Drawing.Point(178, 128);
             this.passtxt.Name = "passtxt";
+            this.passtxt.PasswordChar = '*';
             this.passtxt.Size = new System.Drawing.Size(286, 39);
             this.passtxt.TabIndex = 3;
             // 

@@ -145,7 +145,7 @@
             this.registerbtn.Text = "Register";
             this.registerbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.registerbtn.UseVisualStyleBackColor = true;
-            this.registerbtn.Click += new System.EventHandler(this.button1_Click);
+            this.registerbtn.Click += new System.EventHandler(this.registerbtn_Click);
             // 
             // groupBox1
             // 

@@ -14,6 +14,19 @@ namespace ELS
     public partial class Register : Form
     {
         string username, en_username, password, con_password, en_password, idnum, en_idnum, accttype, en_accttype;
+
+        private void registerbtn_Click(object sender, EventArgs e)
+        {
+            if(usertxt.Text != null && passtxt.Text != null && conpasstxt.Text != null && idnumtxt.Text != null && acctcmb.SelectedIndex != -1)
+            {
+                usertxt.Text = "POGI MO!";
+            }
+            else
+            {
+                usertxt.Text = "MAY KULANG KA!";
+            }
+        }
+
         public Register()
         {
             InitializeComponent();
@@ -36,9 +49,6 @@ namespace ELS
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
+        
     }
 }

@@ -37,9 +37,19 @@ namespace ELS
             this.Hide();
         }
 
+        private void button3_MouseDown(object sender, MouseEventArgs e)
+        {
+                passtxt.PasswordChar = '\0';
+        }
+
+        private void button3_MouseUp(object sender, MouseEventArgs e)
+        {
+            passtxt.PasswordChar = '*';
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
