@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace ELS
 {
+    
     public partial class LogIn : Form
     {
+        string username, en_username, password, en_password;
         public LogIn()
         {
             InitializeComponent();
@@ -36,6 +38,16 @@ namespace ELS
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

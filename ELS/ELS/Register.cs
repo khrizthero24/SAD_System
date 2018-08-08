@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace ELS
 {
+    
     public partial class Register : Form
     {
+        string username, en_username, password, con_password, en_password, idnum, en_idnum, accttype, en_accttype;
         public Register()
         {
             InitializeComponent();
@@ -28,6 +30,15 @@ namespace ELS
             }
 
             base.WndProc(ref m);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

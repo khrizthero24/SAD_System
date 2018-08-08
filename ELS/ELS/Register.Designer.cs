@@ -33,12 +33,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.usertxt = new System.Windows.Forms.TextBox();
+            this.passtxt = new System.Windows.Forms.TextBox();
+            this.conpasstxt = new System.Windows.Forms.TextBox();
+            this.idnumtxt = new System.Windows.Forms.TextBox();
+            this.acctcmb = new System.Windows.Forms.ComboBox();
+            this.registerbtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -93,67 +93,69 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Account Type:";
             // 
-            // textBox1
+            // usertxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(320, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(398, 39);
-            this.textBox1.TabIndex = 6;
+            this.usertxt.Location = new System.Drawing.Point(320, 57);
+            this.usertxt.Name = "usertxt";
+            this.usertxt.Size = new System.Drawing.Size(398, 39);
+            this.usertxt.TabIndex = 6;
+            this.usertxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // passtxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(320, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(398, 39);
-            this.textBox2.TabIndex = 7;
+            this.passtxt.Location = new System.Drawing.Point(320, 147);
+            this.passtxt.Name = "passtxt";
+            this.passtxt.Size = new System.Drawing.Size(398, 39);
+            this.passtxt.TabIndex = 7;
             // 
-            // textBox3
+            // conpasstxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(320, 237);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(398, 39);
-            this.textBox3.TabIndex = 8;
+            this.conpasstxt.Location = new System.Drawing.Point(320, 237);
+            this.conpasstxt.Name = "conpasstxt";
+            this.conpasstxt.Size = new System.Drawing.Size(398, 39);
+            this.conpasstxt.TabIndex = 8;
             // 
-            // textBox4
+            // idnumtxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(320, 327);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(398, 39);
-            this.textBox4.TabIndex = 9;
+            this.idnumtxt.Location = new System.Drawing.Point(320, 327);
+            this.idnumtxt.Name = "idnumtxt";
+            this.idnumtxt.Size = new System.Drawing.Size(398, 39);
+            this.idnumtxt.TabIndex = 9;
             // 
-            // comboBox1
+            // acctcmb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.acctcmb.FormattingEnabled = true;
+            this.acctcmb.Items.AddRange(new object[] {
             "Toolkeeper",
             "Professor"});
-            this.comboBox1.Location = new System.Drawing.Point(320, 416);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(398, 40);
-            this.comboBox1.TabIndex = 10;
+            this.acctcmb.Location = new System.Drawing.Point(320, 416);
+            this.acctcmb.Name = "acctcmb";
+            this.acctcmb.Size = new System.Drawing.Size(398, 40);
+            this.acctcmb.TabIndex = 10;
             // 
-            // button1
+            // registerbtn
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::ELS.Properties.Resources.Registration_64px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(301, 505);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 65);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Register";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerbtn.Image = global::ELS.Properties.Resources.Registration_64px;
+            this.registerbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.registerbtn.Location = new System.Drawing.Point(301, 505);
+            this.registerbtn.Name = "registerbtn";
+            this.registerbtn.Size = new System.Drawing.Size(174, 65);
+            this.registerbtn.TabIndex = 11;
+            this.registerbtn.Text = "Register";
+            this.registerbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.registerbtn.UseVisualStyleBackColor = true;
+            this.registerbtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.registerbtn);
+            this.groupBox1.Controls.Add(this.acctcmb);
+            this.groupBox1.Controls.Add(this.idnumtxt);
+            this.groupBox1.Controls.Add(this.conpasstxt);
+            this.groupBox1.Controls.Add(this.passtxt);
+            this.groupBox1.Controls.Add(this.usertxt);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -196,12 +198,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox usertxt;
+        private System.Windows.Forms.TextBox passtxt;
+        private System.Windows.Forms.TextBox conpasstxt;
+        private System.Windows.Forms.TextBox idnumtxt;
+        private System.Windows.Forms.ComboBox acctcmb;
+        private System.Windows.Forms.Button registerbtn;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
