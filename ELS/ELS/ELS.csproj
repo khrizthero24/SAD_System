@@ -53,6 +53,12 @@
     <Compile Include="BorrowerMainForm.Designer.cs">
       <DependentUpon>BorrowerMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CpEControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CpEControl.Designer.cs">
+      <DependentUpon>CpEControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgotPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="BorrowerMainForm.resx">
       <DependentUpon>BorrowerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CpEControl.resx">
+      <DependentUpon>CpEControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPass.resx">
       <DependentUpon>ForgotPass.cs</DependentUpon>

@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.buttonPanel = new System.Windows.Forms.Panel();
+            this.selectPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.borrowerPanel = new System.Windows.Forms.Panel();
-            this.selectPanel = new System.Windows.Forms.Panel();
+            this.cpEControl1 = new ELS.CpEControl();
             this.buttonPanel.SuspendLayout();
+            this.borrowerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonPanel
@@ -44,10 +46,18 @@
             this.buttonPanel.Controls.Add(this.button1);
             this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonPanel.Location = new System.Drawing.Point(0, 0);
-            this.buttonPanel.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.buttonPanel.Margin = new System.Windows.Forms.Padding(7);
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.Size = new System.Drawing.Size(200, 768);
             this.buttonPanel.TabIndex = 0;
+            // 
+            // selectPanel
+            // 
+            this.selectPanel.BackColor = System.Drawing.Color.White;
+            this.selectPanel.Location = new System.Drawing.Point(185, 0);
+            this.selectPanel.Name = "selectPanel";
+            this.selectPanel.Size = new System.Drawing.Size(10, 384);
+            this.selectPanel.TabIndex = 0;
             // 
             // button2
             // 
@@ -55,7 +65,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::ELS.Properties.Resources.Tick_Box_64px;
             this.button2.Location = new System.Drawing.Point(0, 384);
-            this.button2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button2.Margin = new System.Windows.Forms.Padding(7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 384);
             this.button2.TabIndex = 1;
@@ -70,7 +80,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ELS.Properties.Resources.Tick_Box_64px;
             this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.button1.Margin = new System.Windows.Forms.Padding(7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 384);
             this.button1.TabIndex = 0;
@@ -84,18 +94,21 @@
             this.borrowerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.borrowerPanel.BackColor = System.Drawing.Color.Transparent;
+            this.borrowerPanel.Controls.Add(this.cpEControl1);
             this.borrowerPanel.Location = new System.Drawing.Point(200, 12);
             this.borrowerPanel.Name = "borrowerPanel";
             this.borrowerPanel.Size = new System.Drawing.Size(824, 756);
             this.borrowerPanel.TabIndex = 2;
             // 
-            // selectPanel
+            // cpEControl1
             // 
-            this.selectPanel.BackColor = System.Drawing.Color.White;
-            this.selectPanel.Location = new System.Drawing.Point(185, 0);
-            this.selectPanel.Name = "selectPanel";
-            this.selectPanel.Size = new System.Drawing.Size(10, 384);
-            this.selectPanel.TabIndex = 0;
+            this.cpEControl1.BackColor = System.Drawing.Color.Transparent;
+            this.cpEControl1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpEControl1.Location = new System.Drawing.Point(0, 0);
+            this.cpEControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cpEControl1.Name = "cpEControl1";
+            this.cpEControl1.Size = new System.Drawing.Size(824, 756);
+            this.cpEControl1.TabIndex = 0;
             // 
             // BorrowerMainForm
             // 
@@ -108,12 +121,13 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "BorrowerMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BorrowerMainForm";
             this.Load += new System.EventHandler(this.BorrowerMainForm_Load);
             this.buttonPanel.ResumeLayout(false);
+            this.borrowerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -125,5 +139,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel selectPanel;
         private System.Windows.Forms.Panel borrowerPanel;
+        private CpEControl cpEControl1;
     }
 }
