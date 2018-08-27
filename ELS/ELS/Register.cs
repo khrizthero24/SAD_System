@@ -19,18 +19,18 @@ namespace ELS
         {
             if((string.IsNullOrEmpty(usertxt.Text)) || (string.IsNullOrEmpty(passtxt.Text)) || (string.IsNullOrEmpty(conpasstxt.Text)) || (string.IsNullOrEmpty(idnumtxt.Text))
                 || (string.IsNullOrEmpty(acctcmb.Text)))
-            {          
-                usertxt.Text = "MAY KULANG KA!";
+            {
+                MessageBox.Show("MAY KULANG KA!");
             }
             else
             {
                 if (passtxt.Text == conpasstxt.Text)
                 {
-                    //REGISTER
+                    MessageBox.Show("Registered Successfully");
                 }
                 else
                 {
-                    usertxt.Text = "DI NAG MATCH PASSWORD AND CONFIRM PASS";
+                    MessageBox.Show("DI NAG MATCH PASSWORD AND CONFIRM PASS");
                 }
             }
         }
