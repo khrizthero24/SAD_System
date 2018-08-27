@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace ELS
 {
-    
+
     public partial class Register : Form
     {
         string en_username, en_password, en_idnum, en_accttype, strpass = "password";
@@ -20,7 +21,7 @@ namespace ELS
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-            if((string.IsNullOrEmpty(usertxt.Text)) || (string.IsNullOrEmpty(passtxt.Text)) || (string.IsNullOrEmpty(conpasstxt.Text)) || (string.IsNullOrEmpty(idnumtxt.Text))
+            if ((string.IsNullOrEmpty(usertxt.Text)) || (string.IsNullOrEmpty(passtxt.Text)) || (string.IsNullOrEmpty(conpasstxt.Text)) || (string.IsNullOrEmpty(idnumtxt.Text))
                 || (string.IsNullOrEmpty(acctcmb.Text)))
             {
                 MessageBox.Show("MAY KULANG KA!");
@@ -34,8 +35,6 @@ namespace ELS
                     en_idnum = AES.AES_Encryption.EncryptString(idnumtxt.Text, strpass);
                     en_accttype = AES.AES_Encryption.EncryptString(acctcmb.Text, strpass);
                     MessageBox.Show(en_username);
-
-
                 }
                 else
                 {
@@ -61,6 +60,16 @@ namespace ELS
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to stop registraion?", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Form Login = new LogIn();
+                Login.Show();
+                this.Hide();
             }
         }
 
@@ -94,7 +103,7 @@ namespace ELS
 
             base.WndProc(ref m);
         }
-        
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
