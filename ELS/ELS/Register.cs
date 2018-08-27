@@ -14,6 +14,9 @@ namespace ELS
     public partial class Register : Form
     {
         string en_username, en_password, en_idnum, en_accttype, strpass = "password";
+        bool compAd;
+        public MySqlConnection conn;
+        string mcs;
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
@@ -41,6 +44,39 @@ namespace ELS
             }
         }
 
+        public void Initialize()
+        {
+            mcs = "server=localhost;uid=root;pwd=;database=lending_system;";
+            conn = new MySqlConnection(mcs);
+        }
+
+        public bool OpenConnection()
+        {
+            try
+            {
+                conn.Open();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool CloseConnection()
+        {
+            try
+            {
+                conn.Close();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         public Register()
         {
             InitializeComponent();
