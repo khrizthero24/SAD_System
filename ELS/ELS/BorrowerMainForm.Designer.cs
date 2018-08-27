@@ -118,7 +118,6 @@
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.borrowerPanel);
             this.Controls.Add(this.buttonPanel);
-            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
