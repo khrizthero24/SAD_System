@@ -14,7 +14,7 @@ namespace ELS
     
     public partial class LogIn : Form
     {
-        string username, en_username, password, en_password;
+        string username, en_username, password, en_password, strpass = "password";
         bool compAd;
         public static MySqlConnection conn;
         public static string mcs;
@@ -71,6 +71,7 @@ namespace ELS
                     if (reader.Read())
                     {
                         compAd = true;
+
                         password = reader.GetString("password");
                     }
                     else
@@ -177,13 +178,13 @@ namespace ELS
         {
             string checkQueryuser = "SELECT * FROM users WHERE username = '";
             string checkQueryPass = "SELECT * FROM users WHERE password = '";
-            en_username = usertxt.Text.ToString();
-            en_password = passtxt.Text.ToString();
 
-            if ((en_username == "") || (en_password == ""))
+            if ((usertxt.Text == "") || (passtxt.Text == ""))
                 MessageBox.Show("Please complete up the following", "Log - In");
             else
             {
+                en_username = AES.AES_Encryption.EncryptString(usertxt.Text, strpass);
+                en_password = AES.AES_Encryption.EncryptString(passtxt.Text, strpass);
                 checkQueryuser += en_username + "'";
                 checkQueryPass += en_password + "'";
                 compareAdmin(checkQueryuser);

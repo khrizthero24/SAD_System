@@ -114,7 +114,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passtxt.Location = new System.Drawing.Point(178, 128);
             this.passtxt.Name = "passtxt";
-            this.passtxt.PasswordChar = '*';
+            this.passtxt.PasswordChar = '●';
             this.passtxt.Size = new System.Drawing.Size(286, 39);
             this.passtxt.TabIndex = 3;
             // 
