@@ -15,9 +15,15 @@ namespace ELS
     public partial class Register : Form
     {
         string en_username, en_password, en_idnum, en_accttype, strpass = "password";
-        bool compAd;
-        public MySqlConnection conn;
         string mcs;
+
+        public void Initialize()
+        {
+            LogIn.mcs = "server=localhost;uid=root;pwd=;database=lending_system;";
+            LogIn.conn = new MySqlConnection(LogIn.mcs);
+        }
+
+
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
@@ -34,7 +40,26 @@ namespace ELS
                     en_password = AES.AES_Encryption.EncryptString(passtxt.Text, strpass);
                     en_idnum = AES.AES_Encryption.EncryptString(idnumtxt.Text, strpass);
                     en_accttype = AES.AES_Encryption.EncryptString(acctcmb.Text, strpass);
-                    MessageBox.Show(en_username);
+                    string query = "INSERT INTO users (username, password, id_num, user_type) VALUES ('" + en_username + "', '" + en_password + "', '" + en_idnum +
+                "', '" + en_accttype + "')";
+
+                    if (LogIn.OpenConnection())
+                    {
+                        try
+                        {
+                            MySqlCommand cmd = new MySqlCommand(query, LogIn.conn);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Registered");
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        finally
+                        {
+                            LogIn.CloseConnection();
+                        }
+                    }
                 }
                 else
                 {
@@ -43,17 +68,26 @@ namespace ELS
             }
         }
 
-        public void Initialize()
-        {
-            mcs = "server=localhost;uid=root;pwd=;database=lending_system;";
-            conn = new MySqlConnection(mcs);
-        }
-
-        public bool OpenConnection()
+      
+        public static bool OpenConnection()
         {
             try
             {
-                conn.Open();
+               LogIn.conn.Open();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public static bool CloseConnection()
+        {
+            try
+            {
+                LogIn.conn.Close();
                 return true;
             }
             catch (MySqlException ex)
@@ -73,19 +107,7 @@ namespace ELS
             }
         }
 
-        public bool CloseConnection()
-        {
-            try
-            {
-                conn.Close();
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
+      
         public Register()
         {
             InitializeComponent();

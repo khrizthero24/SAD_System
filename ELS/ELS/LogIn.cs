@@ -16,8 +16,8 @@ namespace ELS
     {
         string username, en_username, password, en_password;
         bool compAd;
-        public MySqlConnection conn;
-        string mcs;
+        public static MySqlConnection conn;
+        public static string mcs;
 
         public LogIn()
         {
@@ -31,7 +31,7 @@ namespace ELS
             conn = new MySqlConnection(mcs);
         }
 
-        public bool OpenConnection()
+        public static bool OpenConnection()
         {
             try
             {
@@ -45,7 +45,7 @@ namespace ELS
             }
         }
 
-        public bool CloseConnection()
+        public static bool CloseConnection()
         {
             try
             {
@@ -62,7 +62,7 @@ namespace ELS
         public void compareAdmin(string myqueryAd)
         {
             compAd = false;
-            if(this.OpenConnection())
+            if(OpenConnection())
             {
                 try
                 {
@@ -82,14 +82,14 @@ namespace ELS
                 }
                 finally
                 {
-                    this.CloseConnection();
+                    CloseConnection();
                 }
             }
         }
 
         public void comparePass(string myqueryPass)
         {
-           if(this.OpenConnection())
+           if(OpenConnection())
             {
                 try
                 {
@@ -121,7 +121,7 @@ namespace ELS
                 }
                 finally
                 {
-                    this.CloseConnection();
+                    CloseConnection();
                 }
             }
         }
