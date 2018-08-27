@@ -13,28 +13,70 @@ namespace ELS
     
     public partial class Register : Form
     {
-        string username, en_username, password, con_password, en_password, idnum, en_idnum, accttype, en_accttype;
+        string en_username, en_password, en_idnum, en_accttype, strpass = "password";
+        bool compAd;
+        public MySqlConnection conn;
+        string mcs;
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
             if((string.IsNullOrEmpty(usertxt.Text)) || (string.IsNullOrEmpty(passtxt.Text)) || (string.IsNullOrEmpty(conpasstxt.Text)) || (string.IsNullOrEmpty(idnumtxt.Text))
                 || (string.IsNullOrEmpty(acctcmb.Text)))
-            {          
-                usertxt.Text = "MAY KULANG KA!";
+            {
+                MessageBox.Show("MAY KULANG KA!");
             }
             else
             {
                 if (passtxt.Text == conpasstxt.Text)
                 {
-                    //REGISTER
+                    en_username = AES.AES_Encryption.EncryptString(usertxt.Text, strpass);
+                    en_password = AES.AES_Encryption.EncryptString(passtxt.Text, strpass);
+                    en_idnum = AES.AES_Encryption.EncryptString(idnumtxt.Text, strpass);
+                    en_accttype = AES.AES_Encryption.EncryptString(acctcmb.Text, strpass);
+                    MessageBox.Show(en_username);
+
+
                 }
                 else
                 {
-                    usertxt.Text = "DI NAG MATCH PASSWORD AND CONFIRM PASS";
+                    MessageBox.Show("DI NAG MATCH PASSWORD AND CONFIRM PASS");
                 }
             }
         }
 
+        public void Initialize()
+        {
+            mcs = "server=localhost;uid=root;pwd=;database=lending_system;";
+            conn = new MySqlConnection(mcs);
+        }
+
+        public bool OpenConnection()
+        {
+            try
+            {
+                conn.Open();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool CloseConnection()
+        {
+            try
+            {
+                conn.Close();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         public Register()
         {
             InitializeComponent();
@@ -57,6 +99,63 @@ namespace ELS
         {
 
         }
-        
+
+        /*public void Insert()
+        {
+            nameF = NameBox.Text;
+            nameM = NameBox1.Text;
+            nameL = NameBox2.Text;
+            reMARKs = remarkss.Text;
+            // If-Else statement of Gender Button to be thrown in the database
+            if (Mbtn.Checked == true)
+            {
+                G = "M";
+            }
+            else if (FBtn.Checked == true)
+            {
+                G = "F";
+            }
+            if (PatientPicture.Image == null)
+                pickedImage = @"C:\\Users\\Clark Nejal\\Pictures\\DentalPatientImage\\no-image.jpg";
+
+            else
+            {
+                pickedImage = location + "\\\\" + openFileDialog1.SafeFileName;
+            }
+
+            if (remarkss.Text == "")
+                reMARKs = "No Findings";
+
+            string query = "INSERT INTO patients (name, address, emailad, Birthdata, Gender, celnum, telnum, PatientImage, Remarks) VALUES ('" + nameL + ", " + nameF + " " + nameM +
+                "', '" + AddBox.Text + "', '" + emailBox.Text + "', '" + BdayBox.Text + "', '" + G + "', '" + cel + "', '" + tel + "', '" + pickedImage + "', '" + reMARKs + "')";
+
+            if (this.OpenCon())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connect);
+                    cmd.ExecuteNonQuery();
+                    if (MessageBox.Show("New Patient has been added. Do you want again to insert a patient?", "Registration Complete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Clear();
+
+                    else
+                    {
+                        this.Hide();
+                        Form AdminInterface = new AdminInterface();
+                        AdminInterface.Show();
+                    }
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    this.CloseCon();
+                    Clear();
+                }
+            }
+        }*/
     }
 }

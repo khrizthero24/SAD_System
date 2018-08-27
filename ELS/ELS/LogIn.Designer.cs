@@ -126,7 +126,6 @@
             this.usertxt.Name = "usertxt";
             this.usertxt.Size = new System.Drawing.Size(286, 39);
             this.usertxt.TabIndex = 2;
-            this.usertxt.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
