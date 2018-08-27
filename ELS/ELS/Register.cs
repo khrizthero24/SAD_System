@@ -13,7 +13,7 @@ namespace ELS
     
     public partial class Register : Form
     {
-        string username, en_username, password, con_password, en_password, idnum, en_idnum, accttype, en_accttype;
+        string en_username, en_password, en_idnum, en_accttype, strpass = "password";
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
@@ -26,7 +26,13 @@ namespace ELS
             {
                 if (passtxt.Text == conpasstxt.Text)
                 {
-                    MessageBox.Show("Registered Successfully");
+                    en_username = AES.AES_Encryption.EncryptString(usertxt.Text, strpass);
+                    en_password = AES.AES_Encryption.EncryptString(passtxt.Text, strpass);
+                    en_idnum = AES.AES_Encryption.EncryptString(idnumtxt.Text, strpass);
+                    en_accttype = AES.AES_Encryption.EncryptString(acctcmb.Text, strpass);
+                    MessageBox.Show(en_username);
+
+
                 }
                 else
                 {
