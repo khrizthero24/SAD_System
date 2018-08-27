@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ELS
 {
-
+    
     public partial class LogIn : Form
     {
         string username, en_username, password, en_password;
@@ -52,7 +52,7 @@ namespace ELS
                 conn.Close();
                 return true;
             }
-            catch (MySqlException ex)
+            catch(MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
@@ -62,7 +62,7 @@ namespace ELS
         public void compareAdmin(string myqueryAd)
         {
             compAd = false;
-            if (this.OpenConnection())
+            if(this.OpenConnection())
             {
                 try
                 {
@@ -76,7 +76,7 @@ namespace ELS
                     else
                         MessageBox.Show("Account Not Found", "User Not Found");
                 }
-                catch (MySqlException ex)
+                catch(MySqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -89,7 +89,7 @@ namespace ELS
 
         public void comparePass(string myqueryPass)
         {
-            if (this.OpenConnection())
+           if(this.OpenConnection())
             {
                 try
                 {
@@ -97,7 +97,7 @@ namespace ELS
                     MySqlDataReader reader = command.ExecuteReader();
                     if (reader.Read())
                     {
-                        if (reader.GetString("password") == password)
+                        if (reader.GetString("password")==password)
                         {
                             if (reader.GetBoolean("user_type") == false)
                                 MessageBox.Show("CHARAN");
@@ -107,15 +107,15 @@ namespace ELS
                     }
                     else
                     {
-                        if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found",MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             Form ForgotPass = new ForgotPass();
                             ForgotPass.Show();
                             this.Hide();
                         }
-                    }
+                    }     
                 }
-                catch (MySqlException ex)
+                catch(MySqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -155,12 +155,12 @@ namespace ELS
                     this.Hide();
                 }
             }
-
+                
         }
 
         private void button3_MouseDown(object sender, MouseEventArgs e)
         {
-            passtxt.PasswordChar = '\0';
+                passtxt.PasswordChar = '\0';
         }
 
         private void button3_MouseUp(object sender, MouseEventArgs e)
@@ -170,7 +170,7 @@ namespace ELS
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -190,7 +190,7 @@ namespace ELS
                 if (compAd == true)
                     comparePass(checkQueryPass);
             }
-            if ((usertxt.Text != "") && (passtxt.Text != ""))
+            if((usertxt.Text != "")&&(passtxt.Text != ""))
             {
                 usertxt.Text = "";
                 passtxt.Text = "";

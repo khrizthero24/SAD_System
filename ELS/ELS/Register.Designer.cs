@@ -40,6 +40,7 @@
             this.acctcmb = new System.Windows.Forms.ComboBox();
             this.registerbtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.exitButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,6 +151,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.exitButton);
             this.groupBox1.Controls.Add(this.registerbtn);
             this.groupBox1.Controls.Add(this.acctcmb);
             this.groupBox1.Controls.Add(this.idnumtxt);
@@ -163,6 +165,19 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create Account";
+            // 
+            // exitButton
+            // 
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Image = global::ELS.Properties.Resources.Registration_64px;
+            this.exitButton.Location = new System.Drawing.Point(544, 505);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(174, 65);
+            this.exitButton.TabIndex = 12;
+            this.exitButton.Text = "Exit";
+            this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // Register
             // 
@@ -205,5 +220,6 @@
         private System.Windows.Forms.ComboBox acctcmb;
         private System.Windows.Forms.Button registerbtn;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button exitButton;
     }
 }
