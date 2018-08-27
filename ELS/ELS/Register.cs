@@ -99,6 +99,63 @@ namespace ELS
         {
 
         }
-        
+
+        /*public void Insert()
+        {
+            nameF = NameBox.Text;
+            nameM = NameBox1.Text;
+            nameL = NameBox2.Text;
+            reMARKs = remarkss.Text;
+            // If-Else statement of Gender Button to be thrown in the database
+            if (Mbtn.Checked == true)
+            {
+                G = "M";
+            }
+            else if (FBtn.Checked == true)
+            {
+                G = "F";
+            }
+            if (PatientPicture.Image == null)
+                pickedImage = @"C:\\Users\\Clark Nejal\\Pictures\\DentalPatientImage\\no-image.jpg";
+
+            else
+            {
+                pickedImage = location + "\\\\" + openFileDialog1.SafeFileName;
+            }
+
+            if (remarkss.Text == "")
+                reMARKs = "No Findings";
+
+            string query = "INSERT INTO patients (name, address, emailad, Birthdata, Gender, celnum, telnum, PatientImage, Remarks) VALUES ('" + nameL + ", " + nameF + " " + nameM +
+                "', '" + AddBox.Text + "', '" + emailBox.Text + "', '" + BdayBox.Text + "', '" + G + "', '" + cel + "', '" + tel + "', '" + pickedImage + "', '" + reMARKs + "')";
+
+            if (this.OpenCon())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connect);
+                    cmd.ExecuteNonQuery();
+                    if (MessageBox.Show("New Patient has been added. Do you want again to insert a patient?", "Registration Complete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        Clear();
+
+                    else
+                    {
+                        this.Hide();
+                        Form AdminInterface = new AdminInterface();
+                        AdminInterface.Show();
+                    }
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    this.CloseCon();
+                    Clear();
+                }
+            }
+        }*/
     }
 }
