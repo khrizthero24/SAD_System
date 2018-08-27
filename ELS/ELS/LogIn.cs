@@ -140,9 +140,22 @@ namespace ELS
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Form register = new Register();
-            register.Show();
-            this.Hide();
+            if ((usertxt.Text == "") && (passtxt.Text == ""))
+            {
+                Form register = new Register();
+                register.Show();
+                this.Hide();
+            }
+            else
+            {
+                if (MessageBox.Show("Do you really want register?", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Form register = new Register();
+                    register.Show();
+                    this.Hide();
+                }
+            }
+                
         }
 
         private void button3_MouseDown(object sender, MouseEventArgs e)

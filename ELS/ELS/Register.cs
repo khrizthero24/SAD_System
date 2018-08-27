@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace ELS
@@ -34,8 +35,6 @@ namespace ELS
                     en_idnum = AES.AES_Encryption.EncryptString(idnumtxt.Text, strpass);
                     en_accttype = AES.AES_Encryption.EncryptString(acctcmb.Text, strpass);
                     MessageBox.Show(en_username);
-
-
                 }
                 else
                 {
@@ -61,6 +60,16 @@ namespace ELS
             {
                 MessageBox.Show(ex.Message);
                 return false;
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to stop registraion?", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Form Login = new LogIn();
+                Login.Show();
+                this.Hide();
             }
         }
 
