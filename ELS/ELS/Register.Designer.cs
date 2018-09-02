@@ -106,6 +106,7 @@
             // 
             this.passtxt.Location = new System.Drawing.Point(320, 147);
             this.passtxt.Name = "passtxt";
+            this.passtxt.PasswordChar = '●';
             this.passtxt.Size = new System.Drawing.Size(398, 39);
             this.passtxt.TabIndex = 7;
             // 
@@ -113,6 +114,7 @@
             // 
             this.conpasstxt.Location = new System.Drawing.Point(320, 237);
             this.conpasstxt.Name = "conpasstxt";
+            this.conpasstxt.PasswordChar = '●';
             this.conpasstxt.Size = new System.Drawing.Size(398, 39);
             this.conpasstxt.TabIndex = 8;
             // 
@@ -125,6 +127,7 @@
             // 
             // acctcmb
             // 
+            this.acctcmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.acctcmb.FormattingEnabled = true;
             this.acctcmb.Items.AddRange(new object[] {
             "Toolkeeper",
