@@ -93,6 +93,16 @@ namespace ELS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap new_bg_shrink {
+            get {
+                object obj = ResourceManager.GetObject("new_bg_shrink", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Registration_64px {
             get {
                 object obj = ResourceManager.GetObject("Registration_64px", resourceCulture);

@@ -159,6 +159,11 @@ namespace ELS
                 
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void button3_MouseDown(object sender, MouseEventArgs e)
         {
                 passtxt.PasswordChar = '\0';

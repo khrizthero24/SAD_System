@@ -121,6 +121,9 @@
   <data name="modern-material-design-full-hd-wallpaper-no-766-1920x1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modern-material-design-full-hd-wallpaper-no-766-1920x1920.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Tick_Box_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tick Box_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Add User Male_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add User Male_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,7 @@
   <data name="ShowHide2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShowHide2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tick_Box_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tick Box_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new_bg_shrink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_bg_shrink.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

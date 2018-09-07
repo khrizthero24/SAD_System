@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ELS.Properties.Resources.modern_material_design_full_hd_wallpaper_no_766_1920x1920;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.borrowerPanel);
             this.Controls.Add(this.buttonPanel);

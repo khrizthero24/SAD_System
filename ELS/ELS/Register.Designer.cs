@@ -142,7 +142,7 @@
             this.registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerbtn.Image = global::ELS.Properties.Resources.Registration_64px;
             this.registerbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.registerbtn.Location = new System.Drawing.Point(301, 505);
+            this.registerbtn.Location = new System.Drawing.Point(180, 505);
             this.registerbtn.Name = "registerbtn";
             this.registerbtn.Size = new System.Drawing.Size(174, 65);
             this.registerbtn.TabIndex = 11;
@@ -173,12 +173,13 @@
             // 
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Image = global::ELS.Properties.Resources.Registration_64px;
-            this.exitButton.Location = new System.Drawing.Point(544, 505);
+            this.exitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exitButton.Location = new System.Drawing.Point(423, 505);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(174, 65);
             this.exitButton.TabIndex = 12;
             this.exitButton.Text = "Exit";
-            this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.exitButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -187,7 +188,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::ELS.Properties.Resources.modern_material_design_full_hd_wallpaper_no_766_1920x1920;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
