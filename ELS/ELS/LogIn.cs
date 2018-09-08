@@ -14,8 +14,9 @@ namespace ELS
     
     public partial class LogIn : Form
     {
-        string username, en_username, password, en_password, strpass = "password";
-        bool compAd;
+        string username,user_type, en_username, password, en_password, strpass = "password";
+        int user_no;
+        bool compAd,correctpass;
         public static MySqlConnection conn;
         public static string mcs;
 
@@ -27,7 +28,7 @@ namespace ELS
 
         public void Initialize()
         {
-            mcs = "server=localhost;uid=root;pwd=;database=lending_system;";
+            mcs = "server=localhost;uid=root;pwd=;database=lending_system;sslmode=none;";
             conn = new MySqlConnection(mcs);
         }
 
@@ -49,7 +50,7 @@ namespace ELS
         {
             try
             {
-                conn.Close();
+                conn.Dispose();
                 return true;
             }
             catch(MySqlException ex)
@@ -68,14 +69,19 @@ namespace ELS
                 {
                     MySqlCommand command = new MySqlCommand(myqueryAd, conn);
                     MySqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        compAd = true;
-
-                        password = reader.GetString("password");
+                        
+                        username = AES.AES_Encryption.DecryptString(reader.GetString("username"), strpass);
+                        if (usertxt.Text==username)
+                        {
+                            compAd = true;
+                            
+                        }
+                        user_no++;
+                        
                     }
-                    else
-                        MessageBox.Show("Account Not Found", "User Not Found");
+                        
                 }
                 catch(MySqlException ex)
                 {
@@ -90,31 +96,40 @@ namespace ELS
 
         public void comparePass(string myqueryPass)
         {
+            string pass, user;
            if(OpenConnection())
             {
+                
                 try
                 {
+                    
                     MySqlCommand command = new MySqlCommand(myqueryPass, conn);
                     MySqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        if (reader.GetString("password")==password)
+                        pass = AES.AES_Encryption.DecryptString(reader[0].ToString(), strpass);
+                        user = AES.AES_Encryption.DecryptString(reader[1].ToString(), strpass);
+                        MessageBox.Show(pass);
+                        if (pass==password)
                         {
-                            if (reader.GetBoolean("user_type") == false)
+                            if ( user == "Toolkeeper")
+                            {
                                 MessageBox.Show("CHARAN");
+                            }
                             else
-                                MessageBox.Show("CHURON");
+                            {
+                                Form Borrow = new BorrowerMainForm();
+                                Borrow.Show();
+                                this.Hide();
+                            }
+                        }
+                        if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            
                         }
                     }
-                    else
-                    {
-                        if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found",MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            Form ForgotPass = new ForgotPass();
-                            ForgotPass.Show();
-                            this.Hide();
-                        }
-                    }     
+
+                         
                 }
                 catch(MySqlException ex)
                 {
@@ -181,20 +196,22 @@ namespace ELS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string checkQueryuser = "SELECT * FROM users WHERE username = '";
-            string checkQueryPass = "SELECT * FROM users WHERE password = '";
-
+            string checkQueryuser = "SELECT * FROM users;";
+            string checkQueryPass = "SELECT password,user_type FROM users where user_no = "+user_no+";";
+            password = passtxt.Text;
             if ((usertxt.Text == "") || (passtxt.Text == ""))
+            {
                 MessageBox.Show("Please complete up the following", "Log - In");
+            }
             else
             {
-                en_username = AES.AES_Encryption.EncryptString(usertxt.Text, strpass);
-                en_password = AES.AES_Encryption.EncryptString(passtxt.Text, strpass);
-                checkQueryuser += en_username + "'";
-                checkQueryPass += en_password + "'";
                 compareAdmin(checkQueryuser);
                 if (compAd == true)
-                    comparePass(checkQueryPass);
+                {
+                    MessageBox.Show("Account Found", "User Found");
+                    
+                }
+                comparePass(checkQueryPass);
             }
             if((usertxt.Text != "")&&(passtxt.Text != ""))
             {
