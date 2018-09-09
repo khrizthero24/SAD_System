@@ -94,16 +94,17 @@ namespace ELS
             }
         }
 
-        public void comparePass(string myqueryPass)
+        public void comparePass()
         {
             string pass, user;
-           if(OpenConnection())
+            string checkQueryPass = "SELECT password,user_type FROM users where user_no = " + user_no + ";";
+            if (OpenConnection())
             {
                 
                 try
                 {
                     
-                    MySqlCommand command = new MySqlCommand(myqueryPass, conn);
+                    MySqlCommand command = new MySqlCommand(checkQueryPass, conn);
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -118,9 +119,9 @@ namespace ELS
                             }
                             else
                             {
-                                Form Borrow = new BorrowerMainForm();
+                                /*Form Borrow = new BorrowerMainForm();
                                 Borrow.Show();
-                                this.Hide();
+                                this.Hide();*/
                             }
                         }
                         if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -197,7 +198,7 @@ namespace ELS
         private void button1_Click(object sender, EventArgs e)
         {
             string checkQueryuser = "SELECT * FROM users;";
-            string checkQueryPass = "SELECT password,user_type FROM users where user_no = "+user_no+";";
+           
             password = passtxt.Text;
             if ((usertxt.Text == "") || (passtxt.Text == ""))
             {
@@ -209,9 +210,8 @@ namespace ELS
                 if (compAd == true)
                 {
                     MessageBox.Show("Account Found", "User Found");
-                    
+                    comparePass();
                 }
-                comparePass(checkQueryPass);
             }
             if((usertxt.Text != "")&&(passtxt.Text != ""))
             {
