@@ -14,8 +14,8 @@ namespace ELS
     
     public partial class LogIn : Form
     {
-        string username,user_type, en_username, password, en_password, strpass = "password";
-        int user_no;
+        string username, en_username, password, strpass = "password";
+        int user_no, user_type;
         bool compAd,correctpass;
         public static MySqlConnection conn;
         public static string mcs;
@@ -110,23 +110,30 @@ namespace ELS
                     {
                         pass = AES.AES_Encryption.DecryptString(reader[0].ToString(), strpass);
                         user = AES.AES_Encryption.DecryptString(reader[1].ToString(), strpass);
-                        MessageBox.Show(pass);
                         if (pass==password)
                         {
+                            correctpass = true;
                             if ( user == "Toolkeeper")
                             {
-                                MessageBox.Show("CHARAN");
+                                user_type = 1;
                             }
                             else
                             {
-                                /*Form Borrow = new BorrowerMainForm();
-                                Borrow.Show();
-                                this.Hide();*/
+                                user_type = 0;
                             }
                         }
-                        if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        else 
                         {
-                            
+                            if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                Form forgot = new ForgotPass();
+                                forgot.Show();
+                                Hide();
+                            }
+                            else
+                            {
+                                
+                            }
                         }
                     }
 
@@ -165,7 +172,7 @@ namespace ELS
             }
             else
             {
-                if (MessageBox.Show("Do you really want register?", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Do you really want to register?", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Form register = new Register();
                     register.Show();
@@ -207,10 +214,24 @@ namespace ELS
             else
             {
                 compareAdmin(checkQueryuser);
-                if (compAd == true)
+                if (compAd)
                 {
-                    MessageBox.Show("Account Found", "User Found");
                     comparePass();
+                    if(correctpass)
+                    {
+                        if(user_type==1)
+                        {
+                            Form lender = new LenderMainForm();
+                            lender.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            Form borrow = new BorrowerMainForm();
+                            borrow.Show();
+                            this.Hide();
+                        }
+                    }
                 }
             }
             if((usertxt.Text != "")&&(passtxt.Text != ""))

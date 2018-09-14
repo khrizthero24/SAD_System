@@ -18,6 +18,7 @@ namespace ELS
             selectPanel.Height = button1.Height;
             selectPanel.Top = button1.Top;
         }
+        bool cpe = false;
 
         private void BorrowerMainForm_Load(object sender, EventArgs e)
         {
@@ -38,12 +39,14 @@ namespace ELS
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            cpe = true;
             selectPanel.Height = button1.Height;
             selectPanel.Top = button1.Top;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            cpe = false;
             selectPanel.Height = button2.Height;
             selectPanel.Top = button2.Top;
         }

@@ -16,5 +16,10 @@ namespace ELS
         {
             InitializeComponent();
         }
+
+        private void LenderMainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
