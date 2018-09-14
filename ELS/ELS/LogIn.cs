@@ -14,7 +14,8 @@ namespace ELS
     
     public partial class LogIn : Form
     {
-        string username, en_username, password, strpass = "password";
+        string username, en_username, password;
+            public static string strpass = "password";
         int user_no, user_type;
         bool compAd,correctpass;
         public static MySqlConnection conn;
@@ -26,7 +27,7 @@ namespace ELS
             Initialize();
         }
 
-        public void Initialize()
+        public static void Initialize()
         {
             mcs = "server=localhost;uid=root;pwd=;database=lending_system;sslmode=none;";
             conn = new MySqlConnection(mcs);
@@ -59,7 +60,26 @@ namespace ELS
                 return false;
             }
         }
-
+        public static void Insert(string q)
+        {
+            string query = q;
+            if (OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                        MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+            }
+        }
         public void compareAdmin(string myqueryAd)
         {
             compAd = false;
@@ -180,6 +200,11 @@ namespace ELS
                 }
             }
                 
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
