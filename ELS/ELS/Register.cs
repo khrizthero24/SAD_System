@@ -65,6 +65,13 @@ namespace ELS
                 {
                     MessageBox.Show("DI NAG MATCH PASSWORD AND CONFIRM PASS");
                 }
+                usertxt.Text = null;
+                passtxt.Text = null;
+                idnumtxt.Text = null;
+                acctcmb.Text = null;
+                Form login = new LogIn();
+                login.Show();
+                this.Hide();
             }
         }
 
