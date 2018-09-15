@@ -16,7 +16,7 @@ namespace ELS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LenderMainForm());
+            Application.Run(new LogIn());
         }
     }
 }
