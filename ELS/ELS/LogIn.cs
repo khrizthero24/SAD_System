@@ -188,7 +188,7 @@ namespace ELS
             {
                 Form register = new Register();
                 register.Show();
-                this.Hide();
+                Hide();
             }
             else
             {
@@ -196,7 +196,7 @@ namespace ELS
                 {
                     Form register = new Register();
                     register.Show();
-                    this.Hide();
+                    Hide();
                 }
             }
                 
@@ -248,13 +248,13 @@ namespace ELS
                         {
                             Form lender = new LenderMainForm();
                             lender.Show();
-                            this.Hide();
+                            Hide();
                         }
                         else
                         {
                             Form borrow = new BorrowerMainForm();
                             borrow.Show();
-                            this.Hide();
+                            Hide();
                         }
                     }
                 }

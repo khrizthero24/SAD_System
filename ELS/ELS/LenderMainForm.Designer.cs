@@ -32,15 +32,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.edit_Item1 = new ELS.Edit_Item();
+            this.addItem1 = new ELS.AddItem(this);
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.item_no = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.item_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.addItem1 = new ELS.AddItem();
+            this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,11 +87,31 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.edit_Item1);
             this.panel1.Controls.Add(this.addItem1);
             this.panel1.Location = new System.Drawing.Point(18, 390);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 348);
             this.panel1.TabIndex = 4;
+            // 
+            // edit_Item1
+            // 
+            this.edit_Item1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_Item1.Location = new System.Drawing.Point(0, 0);
+            this.edit_Item1.Margin = new System.Windows.Forms.Padding(6);
+            this.edit_Item1.Name = "edit_Item1";
+            this.edit_Item1.Size = new System.Drawing.Size(964, 348);
+            this.edit_Item1.TabIndex = 1;
+            // 
+            // addItem1
+            // 
+            this.addItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addItem1.Location = new System.Drawing.Point(0, 0);
+            this.addItem1.Margin = new System.Windows.Forms.Padding(6);
+            this.addItem1.Name = "addItem1";
+            this.addItem1.Size = new System.Drawing.Size(964, 348);
+            this.addItem1.TabIndex = 0;
+            this.addItem1.Visible = false;
             // 
             // button2
             // 
@@ -130,12 +151,15 @@
             this.item_name,
             this.description,
             this.quantity});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(18, 79);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(964, 217);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // item_no
             // 
@@ -148,24 +172,14 @@
             this.item_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.item_name.Width = 196;
             // 
-            // quantity
-            // 
-            this.quantity.Text = "Quantity";
-            this.quantity.Width = 199;
-            // 
             // description
             // 
             this.description.Text = "Description";
             // 
-            // addItem1
+            // quantity
             // 
-            this.addItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addItem1.Location = new System.Drawing.Point(0, 0);
-            this.addItem1.Margin = new System.Windows.Forms.Padding(6);
-            this.addItem1.Name = "addItem1";
-            this.addItem1.Size = new System.Drawing.Size(964, 348);
-            this.addItem1.TabIndex = 0;
-            this.addItem1.Visible = false;
+            this.quantity.Text = "Quantity";
+            this.quantity.Width = 199;
             // 
             // LenderMainForm
             // 
@@ -182,6 +196,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LenderMainForm";
             this.Load += new System.EventHandler(this.LenderMainForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LenderMainForm_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -192,17 +207,18 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader item_no;
         private System.Windows.Forms.ColumnHeader item_name;
         private System.Windows.Forms.ColumnHeader quantity;
         private AddItem addItem1;
         private System.Windows.Forms.ColumnHeader description;
+        private Edit_Item edit_Item1;
+        public System.Windows.Forms.ListView listView1;
+        public System.Windows.Forms.Button button4;
     }
 }

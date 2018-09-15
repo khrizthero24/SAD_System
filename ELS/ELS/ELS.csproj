@@ -80,6 +80,12 @@
     <Compile Include="CpEControl.Designer.cs">
       <DependentUpon>CpEControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditItem.Designer.cs">
+      <DependentUpon>EditItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgotPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CpEControl.resx">
       <DependentUpon>CpEControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditItem.resx">
+      <DependentUpon>EditItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPass.resx">
       <DependentUpon>ForgotPass.cs</DependentUpon>
