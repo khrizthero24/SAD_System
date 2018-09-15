@@ -12,6 +12,8 @@ namespace ELS
 {
     public partial class BorrowerMainForm : Form
     {
+        public static string t_room, subj_sect, exp_title, room_time, date, faculty, name, stud_no;
+
         public BorrowerMainForm()
         {
             InitializeComponent();
@@ -40,12 +42,14 @@ namespace ELS
         {
             selectPanel.Height = button1.Height;
             selectPanel.Top = button1.Top;
+            t_room = "CPE";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             selectPanel.Height = button2.Height;
             selectPanel.Top = button2.Top;
+            t_room = "ECE";
         }
     }
 }

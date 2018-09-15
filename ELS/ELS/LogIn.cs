@@ -14,7 +14,7 @@ namespace ELS
     
     public partial class LogIn : Form
     {
-        string username,user_type, en_username, password, en_password, strpass = "password";
+        public static string username,user_type, en_username, password, en_password, strpass = "password";
         int user_no;
         bool compAd,correctpass;
         public static MySqlConnection conn;
