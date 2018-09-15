@@ -14,9 +14,8 @@ namespace ELS
     
     public partial class LogIn : Form
     {
-        string username, en_username, password;
-            public static string strpass = "password";
-        int user_no, user_type;
+        public static string username,user_type, en_username, password, en_password, strpass = "password";
+        int user_no;
         bool compAd,correctpass;
         public static MySqlConnection conn;
         public static string mcs;
@@ -135,26 +134,26 @@ namespace ELS
                             correctpass = true;
                             if ( user == "Toolkeeper")
                             {
-                                user_type = 1;
+                                user_type = "1";
                             }
                             else
                             {
-                                user_type = 0;
+                                user_type = "0";
                             }
                         }
                         else 
                         {
-                            if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                            {
+                        if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
                                 Form forgot = new ForgotPass();
                                 forgot.Show();
                                 Hide();
                             }
                             else
                             {
-                                
-                            }
+                            
                         }
+                    }
                     }
 
                          
@@ -200,8 +199,8 @@ namespace ELS
                 }
             }
                 
-        }
-
+            }
+                
         private void LogIn_Load(object sender, EventArgs e)
         {
 
@@ -244,7 +243,7 @@ namespace ELS
                     comparePass();
                     if(correctpass)
                     {
-                        if(user_type==1)
+                        if(user_type == "1")
                         {
                             Form lender = new LenderMainForm();
                             lender.Show();

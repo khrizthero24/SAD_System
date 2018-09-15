@@ -13,7 +13,6 @@ namespace ELS
 {
     public partial class CpEControl : UserControl
     {
-        string en_t_room, en_subj_sect, en_exp_title, en_room_time, en_date, en_faculty, en_name, en_stud_no, en_quan_item;
 
         private void CpEControl_Load(object sender, EventArgs e)
         {
