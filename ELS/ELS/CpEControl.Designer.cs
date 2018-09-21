@@ -176,7 +176,7 @@
             this.textBox4.Location = new System.Drawing.Point(248, 545);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(523, 29);
-            this.textBox4.TabIndex = 12;
+            this.textBox4.TabIndex = 13;
             // 
             // label9
             // 
@@ -220,7 +220,7 @@
             this.textBox6.Location = new System.Drawing.Point(248, 621);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(523, 29);
-            this.textBox6.TabIndex = 16;
+            this.textBox6.TabIndex = 15;
             // 
             // button1
             // 
@@ -229,7 +229,7 @@
             this.button1.Location = new System.Drawing.Point(82, 677);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(226, 54);
-            this.button1.TabIndex = 17;
+            this.button1.TabIndex = 16;
             this.button1.Text = "Confirm";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -241,9 +241,10 @@
             this.button2.Location = new System.Drawing.Point(516, 677);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(226, 54);
-            this.button2.TabIndex = 18;
+            this.button2.TabIndex = 17;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // listView1
             // 
@@ -253,7 +254,7 @@
             this.listView1.Location = new System.Drawing.Point(35, 292);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(467, 228);
-            this.listView1.TabIndex = 19;
+            this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
@@ -272,7 +273,7 @@
             this.button3.Location = new System.Drawing.Point(527, 292);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(226, 54);
-            this.button3.TabIndex = 20;
+            this.button3.TabIndex = 9;
             this.button3.Text = "Add Item";
             this.button3.UseVisualStyleBackColor = false;
             // 
@@ -283,7 +284,7 @@
             this.button4.Location = new System.Drawing.Point(527, 368);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(226, 54);
-            this.button4.TabIndex = 21;
+            this.button4.TabIndex = 10;
             this.button4.Text = "Remove Selected Item";
             this.button4.UseVisualStyleBackColor = false;
             // 
@@ -294,7 +295,7 @@
             this.button5.Location = new System.Drawing.Point(527, 444);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(226, 54);
-            this.button5.TabIndex = 22;
+            this.button5.TabIndex = 11;
             this.button5.Text = "Clear All Items";
             this.button5.UseVisualStyleBackColor = false;
             // 

@@ -32,8 +32,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.edit_Item1 = new ELS.Edit_Item();
-            this.addItem1 = new ELS.AddItem(this);
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +40,9 @@
             this.item_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.edit_Item3 = new ELS.Edit_Item();
+            this.edit_Item2 = new ELS.Edit_Item();
+            this.edit_Item1 = new ELS.Edit_Item();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             this.button4.Location = new System.Drawing.Point(743, 302);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(234, 52);
-            this.button4.TabIndex = 6;
+            this.button4.TabIndex = 4;
             this.button4.Text = "Refresh List";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -81,37 +82,19 @@
             this.button3.Location = new System.Drawing.Point(503, 302);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(234, 52);
-            this.button3.TabIndex = 5;
+            this.button3.TabIndex = 3;
             this.button3.Text = "Check Item Queue";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.edit_Item3);
+            this.panel1.Controls.Add(this.edit_Item2);
             this.panel1.Controls.Add(this.edit_Item1);
-            this.panel1.Controls.Add(this.addItem1);
             this.panel1.Location = new System.Drawing.Point(18, 390);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 348);
             this.panel1.TabIndex = 4;
-            // 
-            // edit_Item1
-            // 
-            this.edit_Item1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_Item1.Location = new System.Drawing.Point(0, 0);
-            this.edit_Item1.Margin = new System.Windows.Forms.Padding(6);
-            this.edit_Item1.Name = "edit_Item1";
-            this.edit_Item1.Size = new System.Drawing.Size(964, 348);
-            this.edit_Item1.TabIndex = 1;
-            // 
-            // addItem1
-            // 
-            this.addItem1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addItem1.Location = new System.Drawing.Point(0, 0);
-            this.addItem1.Margin = new System.Windows.Forms.Padding(6);
-            this.addItem1.Name = "addItem1";
-            this.addItem1.Size = new System.Drawing.Size(964, 348);
-            this.addItem1.TabIndex = 0;
-            this.addItem1.Visible = false;
             // 
             // button2
             // 
@@ -119,7 +102,7 @@
             this.button2.Location = new System.Drawing.Point(263, 302);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(234, 52);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Edit Item";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -130,7 +113,7 @@
             this.button1.Location = new System.Drawing.Point(23, 302);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(234, 52);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Add Item";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -181,12 +164,39 @@
             this.quantity.Text = "Quantity";
             this.quantity.Width = 199;
             // 
+            // edit_Item3
+            // 
+            this.edit_Item3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_Item3.Location = new System.Drawing.Point(0, 0);
+            this.edit_Item3.Margin = new System.Windows.Forms.Padding(6);
+            this.edit_Item3.Name = "edit_Item3";
+            this.edit_Item3.Size = new System.Drawing.Size(964, 348);
+            this.edit_Item3.TabIndex = 5;
+            // 
+            // edit_Item2
+            // 
+            this.edit_Item2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_Item2.Location = new System.Drawing.Point(0, 0);
+            this.edit_Item2.Margin = new System.Windows.Forms.Padding(6);
+            this.edit_Item2.Name = "edit_Item2";
+            this.edit_Item2.Size = new System.Drawing.Size(964, 348);
+            this.edit_Item2.TabIndex = 2;
+            // 
+            // edit_Item1
+            // 
+            this.edit_Item1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_Item1.Location = new System.Drawing.Point(0, 0);
+            this.edit_Item1.Margin = new System.Windows.Forms.Padding(6);
+            this.edit_Item1.Name = "edit_Item1";
+            this.edit_Item1.Size = new System.Drawing.Size(964, 348);
+            this.edit_Item1.TabIndex = 1;
+            // 
             // LenderMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.ClientSize = new System.Drawing.Size(1024, 749);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -220,5 +230,7 @@
         private Edit_Item edit_Item1;
         public System.Windows.Forms.ListView listView1;
         public System.Windows.Forms.Button button4;
+        private Edit_Item edit_Item3;
+        private Edit_Item edit_Item2;
     }
 }
