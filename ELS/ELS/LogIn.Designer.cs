@@ -110,7 +110,7 @@
             this.button3.Location = new System.Drawing.Point(404, 128);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(60, 39);
-            this.button3.TabIndex = 6;
+            this.button3.TabIndex = 4;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
@@ -127,7 +127,7 @@
             this.registerbtn.Location = new System.Drawing.Point(290, 182);
             this.registerbtn.Name = "registerbtn";
             this.registerbtn.Size = new System.Drawing.Size(185, 75);
-            this.registerbtn.TabIndex = 5;
+            this.registerbtn.TabIndex = 6;
             this.registerbtn.Text = "Register";
             this.registerbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.registerbtn.UseVisualStyleBackColor = false;
@@ -144,7 +144,7 @@
             this.logbtn.Location = new System.Drawing.Point(48, 182);
             this.logbtn.Name = "logbtn";
             this.logbtn.Size = new System.Drawing.Size(185, 75);
-            this.logbtn.TabIndex = 4;
+            this.logbtn.TabIndex = 5;
             this.logbtn.Text = "Log - In";
             this.logbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.logbtn.UseVisualStyleBackColor = false;
