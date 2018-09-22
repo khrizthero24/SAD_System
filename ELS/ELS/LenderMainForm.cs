@@ -19,8 +19,6 @@ namespace ELS
             InitializeComponent();
             LogIn.Initialize();
         }
-
-        string itemquantity, itemname;
         int itemno;
 
         protected override void WndProc(ref Message m)

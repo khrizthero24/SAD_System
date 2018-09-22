@@ -87,8 +87,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.edit_Item1);
-            this.panel1.Controls.Add(this.addItem1);
+            this.panel1.Controls.Add(edit_Item1);
+            this.panel1.Controls.Add(addItem1);
             this.panel1.Location = new System.Drawing.Point(18, 390);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 348);

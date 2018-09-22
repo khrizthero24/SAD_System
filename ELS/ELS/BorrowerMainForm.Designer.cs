@@ -94,7 +94,7 @@
             this.borrowerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.borrowerPanel.BackColor = System.Drawing.Color.Transparent;
-            this.borrowerPanel.Controls.Add(this.cpEControl1);
+            this.borrowerPanel.Controls.Add(cpEControl1);
             this.borrowerPanel.Location = new System.Drawing.Point(200, 12);
             this.borrowerPanel.Name = "borrowerPanel";
             this.borrowerPanel.Size = new System.Drawing.Size(824, 756);

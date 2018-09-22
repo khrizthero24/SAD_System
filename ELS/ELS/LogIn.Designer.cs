@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.registerbtn = new System.Windows.Forms.Button();
-            this.logbtn = new System.Windows.Forms.Button();
             this.passtxt = new System.Windows.Forms.TextBox();
             this.usertxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.registerbtn = new System.Windows.Forms.Button();
+            this.logbtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,10 +62,51 @@
             this.groupBox1.Text = "Log - In";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // passtxt
+            // 
+            this.passtxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.passtxt.Location = new System.Drawing.Point(178, 128);
+            this.passtxt.Name = "passtxt";
+            this.passtxt.PasswordChar = '●';
+            this.passtxt.Size = new System.Drawing.Size(286, 39);
+            this.passtxt.TabIndex = 3;
+            // 
+            // usertxt
+            // 
+            this.usertxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.usertxt.Location = new System.Drawing.Point(178, 63);
+            this.usertxt.Name = "usertxt";
+            this.usertxt.Size = new System.Drawing.Size(286, 39);
+            this.usertxt.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(46, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Password:";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Username: ";
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Image = global::ELS.Properties.Resources.ShowHide2;
+            this.button3.Image = global::ELS.Properties.Resources.Show_Password_32px;
             this.button3.Location = new System.Drawing.Point(404, 128);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(60, 39);
@@ -108,47 +149,6 @@
             this.logbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.logbtn.UseVisualStyleBackColor = false;
             this.logbtn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // passtxt
-            // 
-            this.passtxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.passtxt.Location = new System.Drawing.Point(178, 128);
-            this.passtxt.Name = "passtxt";
-            this.passtxt.PasswordChar = '●';
-            this.passtxt.Size = new System.Drawing.Size(286, 39);
-            this.passtxt.TabIndex = 3;
-            // 
-            // usertxt
-            // 
-            this.usertxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.usertxt.Location = new System.Drawing.Point(178, 63);
-            this.usertxt.Name = "usertxt";
-            this.usertxt.Size = new System.Drawing.Size(286, 39);
-            this.usertxt.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password:";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username: ";
             // 
             // LogIn
             // 

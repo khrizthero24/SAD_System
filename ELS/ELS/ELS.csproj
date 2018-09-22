@@ -74,6 +74,12 @@
     <Compile Include="BorrowerMainForm.Designer.cs">
       <DependentUpon>BorrowerMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Borrower_AddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrower_AddItem.Designer.cs">
+      <DependentUpon>Borrower_AddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="CpEControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BorrowerMainForm.resx">
       <DependentUpon>BorrowerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrower_AddItem.resx">
+      <DependentUpon>Borrower_AddItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CpEControl.resx">
       <DependentUpon>CpEControl.cs</DependentUpon>
@@ -189,6 +198,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add New_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add New_64px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Broom_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checked_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show Password_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Shopping Cart_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Camera_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Property_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password Reset_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

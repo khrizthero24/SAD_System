@@ -67,11 +67,14 @@
             // 
             this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(473, 297);
+            this.button2.Image = global::ELS.Properties.Resources.Edit_Property_32px;
+            this.button2.Location = new System.Drawing.Point(499, 291);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(430, 32);
+            this.button2.Size = new System.Drawing.Size(430, 45);
             this.button2.TabIndex = 17;
             this.button2.Text = "Edit Item";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -79,7 +82,7 @@
             // 
             this.item_pic.BackgroundImage = global::ELS.Properties.Resources._default;
             this.item_pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.item_pic.Location = new System.Drawing.Point(12, 26);
+            this.item_pic.Location = new System.Drawing.Point(12, 24);
             this.item_pic.Name = "item_pic";
             this.item_pic.Size = new System.Drawing.Size(430, 265);
             this.item_pic.TabIndex = 11;
@@ -143,11 +146,14 @@
             // 
             this.button1.Enabled = false;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(12, 297);
+            this.button1.Image = global::ELS.Properties.Resources.Add_Camera_32px;
+            this.button1.Location = new System.Drawing.Point(12, 291);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(430, 32);
+            this.button1.Size = new System.Drawing.Size(430, 45);
             this.button1.TabIndex = 12;
             this.button1.Text = "Edit Image";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
