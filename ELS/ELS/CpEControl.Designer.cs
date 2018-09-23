@@ -51,6 +51,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.item_no = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -235,12 +236,14 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.quantity,
-            this.item});
+            this.item_no,
+            this.item,
+            this.quantity});
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(35, 292);
             this.listView1.MultiSelect = false;
@@ -317,6 +320,10 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // item_no
+            // 
+            this.item_no.Text = "Item Number";
+            // 
             // CpEControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -379,5 +386,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader item_no;
     }
 }

@@ -22,6 +22,10 @@ namespace ELS
         }
         int itemno;
         string pic_add;
+
+
+
+
         public static string decode(string thisDecode)
         {
             return AES.AES_Encryption.DecryptString(thisDecode, LogIn.strpass);
@@ -45,7 +49,7 @@ namespace ELS
                         iItem.SubItems.Add(decode(dataReader[2].ToString()));
                         iItem.SubItems.Add(decode(dataReader[3].ToString()));
                         listView1.Items.Add(iItem);
-                        
+
                     }
                 }
                 catch (Exception ex)
@@ -63,7 +67,7 @@ namespace ELS
 
         public void Numeric_Item(int Item_No)
         {
-            string query = "select quantity,image from item_list where item_no = "+Item_No+";";
+            string query = "select quantity,image from item_list where item_no = " + Item_No + ";";
             if (LogIn.OpenConnection())
             {
                 try
@@ -72,7 +76,7 @@ namespace ELS
                     MySqlDataReader dataReader = cmd.ExecuteReader();
                     while (dataReader.Read())
                     {
-                        numericUpDown1.Maximum = Convert.ToInt32(AES.AES_Encryption.DecryptString(dataReader[0].ToString(),LogIn.strpass));
+                        numericUpDown1.Maximum = Convert.ToInt32(AES.AES_Encryption.DecryptString(dataReader[0].ToString(), LogIn.strpass));
                         pic_add = decode(dataReader[1].ToString());
                     }
                 }
@@ -108,19 +112,135 @@ namespace ELS
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             foreach (ListViewItem item in listView1.SelectedItems)
             {
-                ListViewItem iItem;
-                iItem = new ListViewItem(numericUpDown1.Value.ToString());
-                iItem.SubItems.Add(item.SubItems[1].Text);
-                lender.listView1.Items.Add(iItem);
-                lender.listView1.Refresh();
-                lender.listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                lender.listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-
+                string search = item.SubItems[1].Text;
+                ListViewItem itm = lender.listView1.FindItemWithText(search);
+                if (itm != null)
+                {
+                    int i = itm.Index;
+                    lender.listView1.Items[i].SubItems[2].Text = Convert.ToString(Convert.ToInt32(lender.listView1.Items[i].SubItems[2].Text) + Convert.ToInt32(numericUpDown1.Value.ToString()));
+                }
+                else
+                {
+                    ListViewItem iItem;
+                    iItem = new ListViewItem(item.SubItems[0].Text);
+                    iItem.SubItems.Add(item.SubItems[1].Text);
+                    iItem.SubItems.Add(numericUpDown1.Value.ToString());
+                    lender.listView1.Items.Add(iItem);
+                    lender.listView1.Refresh();
+                    lender.listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    lender.listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                }
                 Hide();
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            /*if(textBox1.Text=="")
+            {
+                Populate_ListView("select item_no,item_name,description,quantity from item_list");
+            }
+            else
+            {
+                listView1.Items.Clear();
+                
+                    if (item.Text == textBox1.Text)
+                    {
+                        listView1.Items.Add(item);
+                    }
+
+                   /* foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
+                    {
+                        if (subItem.Text == textBox1.Text)
+                        {
+                            
+                        }
+                    }*/
+
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        { 
+        }
+
+/*        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
             
+        }*/
+
+        private void textBox1_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            /*if (textBox1.Text != "")
+            {
+                foreach (ListViewItem item in listView1.Items)
+                {
+
+                    foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
+                    {
+                        if (subItem.Text.ToLower().Contains(textBox1.Text.ToLower()))
+                        {
+                            item.BackColor = SystemColors.Highlight;
+                            item.ForeColor = SystemColors.HighlightText;
+                        }
+                        else
+                        {
+                            item.BackColor = SystemColors.Window;
+                            item.ForeColor = SystemColors.WindowText;
+                        }
+
+                    }
+                }
+
+            }
+            else
+                Populate_ListView("select item_no,item_name,description,quantity from item_list");*/
+            foreach (ListViewItem item in listView1.Items)
+            {
+                //Selected = true, won't show until the listview has focus, but setting it to true puts it in the 
+                //SelectedItems collection.
+                if (item.SubItems[0].Text.ToLower().StartsWith(textBox1.Text.ToLower()))
+                {
+                    item.Selected = true;
+                    item.BackColor = SystemColors.Highlight;
+                    item.ForeColor = SystemColors.HighlightText;
+                }
+                else if (item.SubItems[1].Text.ToLower().StartsWith(textBox1.Text.ToLower()))
+                {
+                    item.Selected = true;
+                    item.BackColor = SystemColors.Highlight;
+                    item.ForeColor = SystemColors.HighlightText;
+                }
+                else if (item.SubItems[2].Text.ToLower().StartsWith(textBox1.Text.ToLower()))
+                {
+                    item.Selected = true;
+                    item.BackColor = SystemColors.Highlight;
+                    item.ForeColor = SystemColors.HighlightText;
+                }
+                else if (item.SubItems[3].Text.ToLower().StartsWith(textBox1.Text.ToLower()))
+                {
+                    item.Selected = true;
+                    item.BackColor = SystemColors.Highlight;
+                    item.ForeColor = SystemColors.HighlightText;
+                }
+                else
+                {
+                    item.Selected = false;
+                    item.BackColor = Color.White;
+                    item.ForeColor = Color.Black;
+                }
+            }
+            //When the selection is narrowed to one the user can stop typing
+
+            if(textBox1.Text=="")
+                Populate_ListView("select item_no,item_name,description,quantity from item_list");
         }
     }
 }
+

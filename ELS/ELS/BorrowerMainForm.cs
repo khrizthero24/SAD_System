@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ELS
 {
     public partial class BorrowerMainForm : Form
     {
-        public static string t_room, subj_sect, exp_title, room_time, date, faculty, name, stud_no;
-
+        
         public BorrowerMainForm()
         {
             InitializeComponent();
@@ -22,9 +22,37 @@ namespace ELS
         }
         bool cpe = false;
 
+        
+        public void Get_Queue_No()
+        {
+            string query = "Select count(*) from borrow_list;";
+            if (LogIn.OpenConnection())
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, LogIn.conn);
+                    MySqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                      cpEControl1.queue_no = Convert.ToInt32(dataReader[0].ToString())+1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    LogIn.CloseConnection();
+                }
+            }
+        }
+
+
+
         private void BorrowerMainForm_Load(object sender, EventArgs e)
         {
-
+            Get_Queue_No();
         }
         protected override void WndProc(ref Message m)
         {
@@ -44,7 +72,7 @@ namespace ELS
             cpe = true;
             selectPanel.Height = button1.Height;
             selectPanel.Top = button1.Top;
-            t_room = "CPE";
+           cpEControl1.t_room= "CPE";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,7 +80,7 @@ namespace ELS
             cpe = false;
             selectPanel.Height = button2.Height;
             selectPanel.Top = button2.Top;
-            t_room = "ECE";
+            cpEControl1.t_room = "ECE";
         }
     }
 }
