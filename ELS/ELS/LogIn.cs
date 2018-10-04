@@ -141,19 +141,6 @@ namespace ELS
                                 user_type = "0";
                             }
                         }
-                        else 
-                        {
-                        if (MessageBox.Show("Incorrect Password. Forgot Password", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                                Form forgot = new ForgotPass();
-                                forgot.Show();
-                                Hide();
-                            }
-                            else
-                            {
-                            
-                        }
-                    }
                     }
 
                          
@@ -234,6 +221,8 @@ namespace ELS
             if ((usertxt.Text == "") || (passtxt.Text == ""))
             {
                 MessageBox.Show("Please complete up the following", "Log - In");
+                usertxt.Text = "";
+                passtxt.Text = "";
             }
             else
             {
@@ -256,6 +245,19 @@ namespace ELS
                             Hide();
                         }
                     }
+                    else
+                    {
+                        if (MessageBox.Show("Incorrect Password. Forgot Password?", "User Found", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            Form forgot = new ForgotPass();
+                            forgot.Show();
+                            this.Hide();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("User not Found", "Log - In");
                 }
             }
             if((usertxt.Text != "")&&(passtxt.Text != ""))

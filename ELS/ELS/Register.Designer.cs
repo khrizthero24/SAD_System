@@ -36,11 +36,13 @@
             this.usertxt = new System.Windows.Forms.TextBox();
             this.passtxt = new System.Windows.Forms.TextBox();
             this.conpasstxt = new System.Windows.Forms.TextBox();
-            this.idnumtxt = new System.Windows.Forms.TextBox();
             this.acctcmb = new System.Windows.Forms.ComboBox();
             this.registerbtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.exitButton = new System.Windows.Forms.Button();
+            this.idnummask = new System.Windows.Forms.MaskedTextBox();
+            this.Pbutton = new System.Windows.Forms.Button();
+            this.CPbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,13 +120,6 @@
             this.conpasstxt.Size = new System.Drawing.Size(398, 39);
             this.conpasstxt.TabIndex = 8;
             // 
-            // idnumtxt
-            // 
-            this.idnumtxt.Location = new System.Drawing.Point(320, 327);
-            this.idnumtxt.Name = "idnumtxt";
-            this.idnumtxt.Size = new System.Drawing.Size(398, 39);
-            this.idnumtxt.TabIndex = 9;
-            // 
             // acctcmb
             // 
             this.acctcmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -154,10 +149,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.CPbutton);
+            this.groupBox1.Controls.Add(this.Pbutton);
+            this.groupBox1.Controls.Add(this.idnummask);
             this.groupBox1.Controls.Add(this.exitButton);
             this.groupBox1.Controls.Add(this.registerbtn);
             this.groupBox1.Controls.Add(this.acctcmb);
-            this.groupBox1.Controls.Add(this.idnumtxt);
             this.groupBox1.Controls.Add(this.conpasstxt);
             this.groupBox1.Controls.Add(this.passtxt);
             this.groupBox1.Controls.Add(this.usertxt);
@@ -182,6 +179,38 @@
             this.exitButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // idnummask
+            // 
+            this.idnummask.Location = new System.Drawing.Point(320, 334);
+            this.idnummask.Mask = "00000000000";
+            this.idnummask.Name = "idnummask";
+            this.idnummask.Size = new System.Drawing.Size(398, 39);
+            this.idnummask.TabIndex = 13;
+            // 
+            // Pbutton
+            // 
+            this.Pbutton.BackColor = System.Drawing.Color.White;
+            this.Pbutton.Image = global::ELS.Properties.Resources.Show_Password_32px;
+            this.Pbutton.Location = new System.Drawing.Point(658, 147);
+            this.Pbutton.Name = "Pbutton";
+            this.Pbutton.Size = new System.Drawing.Size(60, 39);
+            this.Pbutton.TabIndex = 14;
+            this.Pbutton.UseVisualStyleBackColor = false;
+            this.Pbutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pbutton_MouseDown);
+            this.Pbutton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Pbutton_MouseUp);
+            // 
+            // CPbutton
+            // 
+            this.CPbutton.BackColor = System.Drawing.Color.White;
+            this.CPbutton.Image = global::ELS.Properties.Resources.Show_Password_32px;
+            this.CPbutton.Location = new System.Drawing.Point(658, 237);
+            this.CPbutton.Name = "CPbutton";
+            this.CPbutton.Size = new System.Drawing.Size(60, 39);
+            this.CPbutton.TabIndex = 15;
+            this.CPbutton.UseVisualStyleBackColor = false;
+            this.CPbutton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CPbutton_MouseDown);
+            this.CPbutton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CPbutton_MouseUp);
             // 
             // Register
             // 
@@ -219,10 +248,12 @@
         private System.Windows.Forms.TextBox usertxt;
         private System.Windows.Forms.TextBox passtxt;
         private System.Windows.Forms.TextBox conpasstxt;
-        private System.Windows.Forms.TextBox idnumtxt;
         private System.Windows.Forms.ComboBox acctcmb;
         private System.Windows.Forms.Button registerbtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.MaskedTextBox idnummask;
+        private System.Windows.Forms.Button CPbutton;
+        private System.Windows.Forms.Button Pbutton;
     }
 }

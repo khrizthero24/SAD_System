@@ -27,10 +27,10 @@ namespace ELS
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-            if ((string.IsNullOrEmpty(usertxt.Text)) || (string.IsNullOrEmpty(passtxt.Text)) || (string.IsNullOrEmpty(conpasstxt.Text)) || (string.IsNullOrEmpty(idnumtxt.Text))
+            if ((string.IsNullOrEmpty(usertxt.Text)) || (string.IsNullOrEmpty(passtxt.Text)) || (string.IsNullOrEmpty(conpasstxt.Text)) || (string.IsNullOrEmpty(idnummask.Text))
                 || (string.IsNullOrEmpty(acctcmb.Text)))
             {
-                MessageBox.Show("MAY KULANG KA!");
+                MessageBox.Show("Kindly Complete the Information", "Incomplete");
             }
             else
             {
@@ -38,7 +38,7 @@ namespace ELS
                 {
                     en_username = AES.AES_Encryption.EncryptString(usertxt.Text, strpass);
                     en_password = AES.AES_Encryption.EncryptString(passtxt.Text, strpass);
-                    en_idnum = AES.AES_Encryption.EncryptString(idnumtxt.Text, strpass);
+                    en_idnum = AES.AES_Encryption.EncryptString(idnummask.Text, strpass);
                     en_accttype = AES.AES_Encryption.EncryptString(acctcmb.Text, strpass);
                     string query = "INSERT INTO users (username, password, id_num, user_type) VALUES ('" + en_username + "', '" + en_password + "', '" + en_idnum +
                 "', '" + en_accttype + "')";
@@ -49,7 +49,14 @@ namespace ELS
                         {
                             MySqlCommand cmd = new MySqlCommand(query, LogIn.conn);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Registered");
+                            MessageBox.Show("You're Registered");
+                            Form login = new LogIn();
+                            login.Show();
+                            this.Hide();
+                            usertxt.Text = null;
+                            passtxt.Text = null;
+                            idnummask.Text = null;
+                            acctcmb.Text = null;
                         }
                         catch (MySqlException ex)
                         {
@@ -63,15 +70,10 @@ namespace ELS
                 }
                 else
                 {
-                    MessageBox.Show("DI NAG MATCH PASSWORD AND CONFIRM PASS");
+                    MessageBox.Show("Password Confirmation didn't Match", "Password Unmatched");
+                    conpasstxt.Text = "";
                 }
-                usertxt.Text = null;
-                passtxt.Text = null;
-                idnumtxt.Text = null;
-                acctcmb.Text = null;
-                Form login = new LogIn();
-                login.Show();
-                this.Hide();
+                
             }
         }
 
@@ -102,6 +104,26 @@ namespace ELS
                 MessageBox.Show(ex.Message);
                 return false;
             }
+        }
+
+        private void Pbutton_MouseDown(object sender, MouseEventArgs e)
+        {
+            passtxt.PasswordChar = '\0';
+        }
+
+        private void Pbutton_MouseUp(object sender, MouseEventArgs e)
+        {
+            passtxt.PasswordChar = '●';
+        }
+
+        private void CPbutton_MouseDown(object sender, MouseEventArgs e)
+        {
+           conpasstxt.PasswordChar = '\0';
+        }
+
+        private void CPbutton_MouseUp(object sender, MouseEventArgs e)
+        {
+            conpasstxt.PasswordChar = '●';
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -137,63 +159,5 @@ namespace ELS
         {
 
         }
-
-        /*public void Insert()
-        {
-            nameF = NameBox.Text;
-            nameM = NameBox1.Text;
-            nameL = NameBox2.Text;
-            reMARKs = remarkss.Text;
-            // If-Else statement of Gender Button to be thrown in the database
-            if (Mbtn.Checked == true)
-            {
-                G = "M";
-            }
-            else if (FBtn.Checked == true)
-            {
-                G = "F";
-            }
-            if (PatientPicture.Image == null)
-                pickedImage = @"C:\\Users\\Clark Nejal\\Pictures\\DentalPatientImage\\no-image.jpg";
-
-            else
-            {
-                pickedImage = location + "\\\\" + openFileDialog1.SafeFileName;
-            }
-
-            if (remarkss.Text == "")
-                reMARKs = "No Findings";
-
-            string query = "INSERT INTO patients (name, address, emailad, Birthdata, Gender, celnum, telnum, PatientImage, Remarks) VALUES ('" + nameL + ", " + nameF + " " + nameM +
-                "', '" + AddBox.Text + "', '" + emailBox.Text + "', '" + BdayBox.Text + "', '" + G + "', '" + cel + "', '" + tel + "', '" + pickedImage + "', '" + reMARKs + "')";
-
-            if (this.OpenCon())
-            {
-                try
-                {
-                    MySqlCommand cmd = new MySqlCommand(query, connect);
-                    cmd.ExecuteNonQuery();
-                    if (MessageBox.Show("New Patient has been added. Do you want again to insert a patient?", "Registration Complete", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        Clear();
-
-                    else
-                    {
-                        this.Hide();
-                        Form AdminInterface = new AdminInterface();
-                        AdminInterface.Show();
-                    }
-
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    this.CloseCon();
-                    Clear();
-                }
-            }
-        }*/
     }
 }
