@@ -13,6 +13,7 @@ namespace ELS
 {
     public partial class Borrower_AddItem : Form
     {
+        int[] quantity_item = null;
         public CpEControl lender { get; set; }
         public Borrower_AddItem(CpEControl _form1)
         {
@@ -94,6 +95,10 @@ namespace ELS
         private void Borrower_AddItem_Load(object sender, EventArgs e)
         {
             Populate_ListView("select item_no,item_name,description,quantity from item_list");
+            int arraysize = 2;
+            quantity_item = new int[arraysize];
+            quantity_item[0] = 1;
+            MessageBox.Show(quantity_item[0].ToString());
         }
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -110,6 +115,7 @@ namespace ELS
             }
         }
 
+        
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -140,40 +146,11 @@ namespace ELS
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            /*if(textBox1.Text=="")
-            {
-                Populate_ListView("select item_no,item_name,description,quantity from item_list");
-            }
-            else
-            {
-                listView1.Items.Clear();
-                
-                    if (item.Text == textBox1.Text)
-                    {
-                        listView1.Items.Add(item);
-                    }
-
-                   /* foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
-                    {
-                        if (subItem.Text == textBox1.Text)
-                        {
-                            
-                        }
-                    }*/
-
-
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         { 
         }
-
-/*        private void textBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }*/
 
         private void textBox1_KeyUp_1(object sender, KeyEventArgs e)
         {

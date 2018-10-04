@@ -16,12 +16,11 @@ namespace ELS
 
         public CpEControl()
         {
-            //borrow = _form1;
             InitializeComponent();
             LogIn.Initialize();
         }
-        public string t_room, subj_sect, exp_title, room_time, date, faculty, name, stud_no;
 
+        public string t_room = "none", subj_sect, exp_title, room_time, date, faculty, name, stud_no;
         public int queue_no;
         int max_item;
 
@@ -65,9 +64,6 @@ namespace ELS
             button5.Enabled = false;
         }
 
-
-       
-
         private string Borrow_List()
         {
             name = textBox5.Text;
@@ -79,7 +75,6 @@ namespace ELS
             exp_title = textBox2.Text;
             max_item = listView1.Items.Count;
             string query = null;
-
             query = AES.AES_Encryption.EncryptString(t_room, LogIn.strpass);
             query = query + "','" + AES.AES_Encryption.EncryptString(name, LogIn.strpass);
             query = query + "','" + AES.AES_Encryption.EncryptString(stud_no, LogIn.strpass);
@@ -97,17 +92,20 @@ namespace ELS
         {
             if(DialogResult.Yes == MessageBox.Show("Is all parameters correct?","Information",MessageBoxButtons.YesNo,MessageBoxIcon.Asterisk))
             {
-                LogIn.Insert("CREATE TABLE `"+queue_no+"` ( `item_no` INT(20) NOT NULL , `item_name` VARCHAR(255) NOT NULL , `quantity` VARCHAR(255) NOT NULL , PRIMARY KEY (`item_no`));");
-                
-                LogIn.Insert("insert into borrow_list (tool_room, name, stud_no, subj_sect, room_time,date,faculty,exp_title) values ('" + Borrow_List() + "');");
+                if (t_room != "none")
+                {
+                    LogIn.Insert("CREATE TABLE `" + queue_no + "` ( `item_no` INT(20) NOT NULL , `item_name` VARCHAR(255) NOT NULL , `quantity` VARCHAR(255) NOT NULL , PRIMARY KEY (`item_no`));");
+                    LogIn.Insert("insert into borrow_list (tool_room, name, stud_no, subj_sect, room_time,date,faculty,exp_title) values ('" + Borrow_List() + "');");
 
-                //for (int i = 0; i <= max_item; i++)
-                //{
-                foreach (ListViewItem item in listView1.Items)
+                    foreach (ListViewItem item in listView1.Items)
                     {
-                    LogIn.Insert("INSERT INTO `"+queue_no+"` (`item_no`, `item_name`, `quantity`) VALUES ('" + item.SubItems[0].Text.ToString() + "','" + item.SubItems[1].Text.ToString() + "','" + item.SubItems[2].Text.ToString() + "');");
+                        LogIn.Insert("INSERT INTO `" + queue_no + "` (`item_no`, `item_name`, `quantity`) VALUES ('" + item.SubItems[0].Text.ToString() + "','" + item.SubItems[1].Text.ToString() + "','" + item.SubItems[2].Text.ToString() + "');");
                     }
-                //}
+                }
+                else
+                {
+                    MessageBox.Show("pili ka muna course");
+                }
             }
             else
             {

@@ -153,6 +153,16 @@ namespace ELS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Checkmark_32px {
+            get {
+                object obj = ResourceManager.GetObject("Checkmark_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_64px {
             get {
                 object obj = ResourceManager.GetObject("Delete_64px", resourceCulture);
@@ -196,6 +206,16 @@ namespace ELS.Properties {
         internal static System.Drawing.Bitmap Password_Reset_32px {
             get {
                 object obj = ResourceManager.GetObject("Password Reset_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh_32px {
+            get {
+                object obj = ResourceManager.GetObject("Refresh_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
