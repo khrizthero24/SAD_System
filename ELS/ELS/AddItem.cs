@@ -14,10 +14,10 @@ namespace ELS
 {
     public partial class AddItem : UserControl
     {
-        public LenderMainForm lender{ get; set;}
-        public AddItem(LenderMainForm _form1)
+        //public LenderMainForm lender{ get; set;}
+        public AddItem()//LenderMainForm _form1)
         {
-        lender = _form1;
+        //lender = _form1;
         InitializeComponent();
             LogIn.Initialize();
         }
@@ -73,7 +73,6 @@ namespace ELS
                 item_description.Text = null;
                 item_pic1.BackgroundImage = ELS.Properties.Resources._default;
                 item_quantity.Value = 1;
-                lender.button4_Click(this, e);
             }
             else
             {
@@ -84,7 +83,11 @@ namespace ELS
                 item_pic1.BackgroundImage = ELS.Properties.Resources._default;
                 item_quantity.Value = 1;
             }
-        }
+            isdefault = true;
+            pickedImage = "";
+            location = @"C:\ELS\";
+            fileName = "";
+    }
 
         private void item_pic1_BackgroundImageChanged(object sender, EventArgs e)
         {

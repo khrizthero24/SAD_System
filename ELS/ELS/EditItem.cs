@@ -31,7 +31,7 @@ namespace ELS
             string query = "item_name ='";
             query = query + AES.AES_Encryption.EncryptString(item_name.Text, LogIn.strpass);
             query = query + "', description ='" + AES.AES_Encryption.EncryptString(item_description.Text, LogIn.strpass);
-            if (isdefault)
+            if (fileName=="")
             {
                 query = query + "', quantity ='" + AES.AES_Encryption.EncryptString(item_quantity.Value.ToString(), LogIn.strpass);
             }
@@ -61,8 +61,15 @@ namespace ELS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LogIn.Insert("update item_list set " +  item_req() +"' where item_no = " + item_number+";");
-            File.Copy(pickedImage, @"C:\ELS\" + fileName);
+            if(fileName=="")
+            {
+                LogIn.Insert("update item_list set " + item_req() + "' where item_no = " + item_number + ";");
+            }
+            else
+            {
+                File.Copy(pickedImage, @"C:\ELS\" + fileName);
+                LogIn.Insert("update item_list set " + item_req() + "' where item_no = " + item_number + ";");
+            }
         }
 
         private void item_pic_BackgroundImageChanged(object sender, EventArgs e)

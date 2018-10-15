@@ -124,8 +124,8 @@
   <data name="Checked_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Checked_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="modern-material-design-full-hd-wallpaper-no-766-1920x1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modern-material-design-full-hd-wallpaper-no-766-1920x1920.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Edit Property_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit Property_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add User Male_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add User Male_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +136,8 @@
   <data name="ShowHide2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShowHide2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit Property_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit Property_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Checkmark_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Checkmark_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add Shopping Cart_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add Shopping Cart_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +145,8 @@
   <data name="Registration_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Registration_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Checkmark_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Checkmark_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Password Reset_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Password Reset_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Access_64px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Access_64px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +172,14 @@
   <data name="Broom_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Broom_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Password Reset_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Password Reset_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Administrative Tools_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Administrative Tools_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Print_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="modern-material-design-full-hd-wallpaper-no-766-1920x1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modern-material-design-full-hd-wallpaper-no-766-1920x1920.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tick_Box_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tick Box_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,5 +189,8 @@
   </data>
   <data name="Refresh_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Refresh_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sync_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sync_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

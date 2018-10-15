@@ -15,14 +15,22 @@ namespace ELS
     public partial class Register : Form
     {
         string en_username, en_password, en_idnum, en_accttype, strpass = "password";
-        string mcs;
-
         public void Initialize()
         {
             LogIn.mcs = "server=localhost;uid=root;pwd=;database=lending_system;";
             LogIn.conn = new MySqlConnection(LogIn.mcs);
         }
-
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                Form login = new LogIn();
+                login.Show();
+                Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
 
         private void registerbtn_Click(object sender, EventArgs e)
@@ -34,46 +42,60 @@ namespace ELS
             }
             else
             {
-                if (passtxt.Text == conpasstxt.Text)
+                if (MessageBox.Show("Confirm Registration?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    en_username = AES.AES_Encryption.EncryptString(usertxt.Text, strpass);
-                    en_password = AES.AES_Encryption.EncryptString(passtxt.Text, strpass);
-                    en_idnum = AES.AES_Encryption.EncryptString(idnummask.Text, strpass);
-                    en_accttype = AES.AES_Encryption.EncryptString(acctcmb.Text, strpass);
-                    string query = "INSERT INTO users (username, password, id_num, user_type) VALUES ('" + en_username + "', '" + en_password + "', '" + en_idnum +
-                "', '" + en_accttype + "')";
-
-                    if (LogIn.OpenConnection())
+                    if ((passtxt.Text.Length>=8)&&(conpasstxt.Text.Length>= 8))
                     {
-                        try
+                        if (passtxt.Text == conpasstxt.Text)
                         {
-                            MySqlCommand cmd = new MySqlCommand(query, LogIn.conn);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("You're Registered");
-                            Form login = new LogIn();
-                            login.Show();
-                            this.Hide();
-                            usertxt.Text = null;
-                            passtxt.Text = null;
-                            idnummask.Text = null;
-                            acctcmb.Text = null;
+                            en_username = AES.AES_Encryption.EncryptString(usertxt.Text, strpass);
+                            en_password = AES.AES_Encryption.EncryptString(passtxt.Text, strpass);
+                            en_idnum = AES.AES_Encryption.EncryptString(idnummask.Text, strpass);
+                            en_accttype = AES.AES_Encryption.EncryptString(acctcmb.Text, strpass);
+                            string query = "INSERT INTO users (username, password, id_num, user_type) VALUES ('" + en_username + "', '" + en_password + "', '" + en_idnum +
+                        "', '" + en_accttype + "')";
+
+                            if (LogIn.OpenConnection())
+                            {
+                                try
+                                {
+                                    MySqlCommand cmd = new MySqlCommand(query, LogIn.conn);
+                                    cmd.ExecuteNonQuery();
+                                    MessageBox.Show("You're Registered");
+                                    Form login = new LogIn();
+                                    login.Show();
+                                    this.Hide();
+                                    usertxt.Text = null;
+                                    passtxt.Text = null;
+                                    idnummask.Text = null;
+                                    acctcmb.Text = null;
+                                }
+                                catch (MySqlException ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
+                                finally
+                                {
+                                    LogIn.CloseConnection();
+                                }
+                            }
                         }
-                        catch (MySqlException ex)
+                        else
                         {
-                            MessageBox.Show(ex.Message);
-                        }
-                        finally
-                        {
-                            LogIn.CloseConnection();
+                            MessageBox.Show("Password Confirmation didn't Match", "Password Unmatched");
+                            conpasstxt.Text = "";
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Password Length must be at least 8 characters.", "Password Length Error");
+                    }
+
+
                 }
                 else
                 {
-                    MessageBox.Show("Password Confirmation didn't Match", "Password Unmatched");
-                    conpasstxt.Text = "";
                 }
-                
             }
         }
 

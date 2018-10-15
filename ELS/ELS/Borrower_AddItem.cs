@@ -98,7 +98,6 @@ namespace ELS
             int arraysize = 2;
             quantity_item = new int[arraysize];
             quantity_item[0] = 1;
-            MessageBox.Show(quantity_item[0].ToString());
         }
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)

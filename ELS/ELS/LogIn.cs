@@ -15,7 +15,7 @@ namespace ELS
     public partial class LogIn : Form
     {
         public static string username,user_type, en_username, password, en_password, strpass = "password";
-        int user_no;
+        public static int user_no;
         bool compAd,correctpass;
         public static MySqlConnection conn;
         public static string mcs;
@@ -82,6 +82,7 @@ namespace ELS
         public void compareAdmin(string myqueryAd)
         {
             compAd = false;
+            user_no = 1;
             if(OpenConnection())
             {
                 try
@@ -92,13 +93,17 @@ namespace ELS
                     {
                         
                         username = AES.AES_Encryption.DecryptString(reader.GetString("username"), strpass);
-                        if (usertxt.Text==username)
+                        if (usertxt.Text == username)
                         {
                             compAd = true;
-                            
                         }
-                        user_no++;
-                        
+                        else
+                        {
+                            if(!compAd)
+                            {
+                                user_no++;
+                            }
+                        }
                     }
                         
                 }
@@ -117,6 +122,7 @@ namespace ELS
         {
             string pass, user;
             string checkQueryPass = "SELECT password,user_type FROM users where user_no = " + user_no + ";";
+            correctpass = false;
             if (OpenConnection())
             {
                 
@@ -192,7 +198,15 @@ namespace ELS
         {
 
         }
-
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                Application.ExitThread();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -229,8 +243,8 @@ namespace ELS
                 compareAdmin(checkQueryuser);
                 if (compAd)
                 {
-                    comparePass();
-                    if(correctpass)
+                    comparePass();                    
+                    if (correctpass)
                     {
                         if(user_type == "1")
                         {

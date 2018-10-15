@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.registerbtn = new System.Windows.Forms.Button();
+            this.logbtn = new System.Windows.Forms.Button();
             this.passtxt = new System.Windows.Forms.TextBox();
             this.usertxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.registerbtn = new System.Windows.Forms.Button();
-            this.logbtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(523, 279);
@@ -61,6 +61,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log - In";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Image = global::ELS.Properties.Resources.Show_Password_32px;
+            this.button3.Location = new System.Drawing.Point(404, 128);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(60, 39);
+            this.button3.TabIndex = 4;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
+            this.button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button3_MouseUp);
+            // 
+            // registerbtn
+            // 
+            this.registerbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.registerbtn.BackColor = System.Drawing.Color.Black;
+            this.registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerbtn.ForeColor = System.Drawing.Color.White;
+            this.registerbtn.Image = global::ELS.Properties.Resources.Add_User_Male_64px;
+            this.registerbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.registerbtn.Location = new System.Drawing.Point(290, 182);
+            this.registerbtn.Name = "registerbtn";
+            this.registerbtn.Size = new System.Drawing.Size(185, 75);
+            this.registerbtn.TabIndex = 6;
+            this.registerbtn.Text = "Register";
+            this.registerbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.registerbtn.UseVisualStyleBackColor = false;
+            this.registerbtn.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // logbtn
+            // 
+            this.logbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.logbtn.BackColor = System.Drawing.Color.Black;
+            this.logbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logbtn.ForeColor = System.Drawing.Color.White;
+            this.logbtn.Image = global::ELS.Properties.Resources.Access_64px1;
+            this.logbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logbtn.Location = new System.Drawing.Point(48, 182);
+            this.logbtn.Name = "logbtn";
+            this.logbtn.Size = new System.Drawing.Size(185, 75);
+            this.logbtn.TabIndex = 5;
+            this.logbtn.Text = "Log - In";
+            this.logbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logbtn.UseVisualStyleBackColor = false;
+            this.logbtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // passtxt
             // 
@@ -103,61 +150,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Username: ";
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Image = global::ELS.Properties.Resources.Show_Password_32px;
-            this.button3.Location = new System.Drawing.Point(404, 128);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 39);
-            this.button3.TabIndex = 4;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
-            this.button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button3_MouseUp);
-            // 
-            // registerbtn
-            // 
-            this.registerbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.registerbtn.BackColor = System.Drawing.Color.Transparent;
-            this.registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registerbtn.ForeColor = System.Drawing.Color.White;
-            this.registerbtn.Image = global::ELS.Properties.Resources.Add_User_Male_64px;
-            this.registerbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.registerbtn.Location = new System.Drawing.Point(290, 182);
-            this.registerbtn.Name = "registerbtn";
-            this.registerbtn.Size = new System.Drawing.Size(185, 75);
-            this.registerbtn.TabIndex = 6;
-            this.registerbtn.Text = "Register";
-            this.registerbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.registerbtn.UseVisualStyleBackColor = false;
-            this.registerbtn.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // logbtn
-            // 
-            this.logbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.logbtn.BackColor = System.Drawing.Color.Transparent;
-            this.logbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logbtn.ForeColor = System.Drawing.Color.White;
-            this.logbtn.Image = global::ELS.Properties.Resources.Access_64px1;
-            this.logbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logbtn.Location = new System.Drawing.Point(48, 182);
-            this.logbtn.Name = "logbtn";
-            this.logbtn.Size = new System.Drawing.Size(185, 75);
-            this.logbtn.TabIndex = 5;
-            this.logbtn.Text = "Log - In";
-            this.logbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.logbtn.UseVisualStyleBackColor = false;
-            this.logbtn.Click += new System.EventHandler(this.button1_Click);
-            // 
             // LogIn
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(547, 303);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

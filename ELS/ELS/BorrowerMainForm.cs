@@ -17,12 +17,20 @@ namespace ELS
         public BorrowerMainForm()
         {
             InitializeComponent();
-            selectPanel.Height = button1.Height;
-            selectPanel.Top = button1.Top;
         }
         bool cpe = false;
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                Form login = new LogIn();
+                login.Show();
+                Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
-        
         public void Get_Queue_No()
         {
             string query = "Select count(*) from borrow_list;";
@@ -53,6 +61,7 @@ namespace ELS
         private void BorrowerMainForm_Load(object sender, EventArgs e)
         {
             Get_Queue_No();
+            cpEControl1.Enabled = true;
         }
         protected override void WndProc(ref Message m)
         {
@@ -70,17 +79,18 @@ namespace ELS
         private void button1_Click(object sender, EventArgs e)
         {
             cpe = true;
-            selectPanel.Height = button1.Height;
-            selectPanel.Top = button1.Top;
-           cpEControl1.t_room= "CPE";
+            cpEControl1.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             cpe = false;
-            selectPanel.Height = button2.Height;
-            selectPanel.Top = button2.Top;
             cpEControl1.t_room = "ECE";
+            cpEControl1.Enabled = true;
+        }
+
+        private void cpEControl1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

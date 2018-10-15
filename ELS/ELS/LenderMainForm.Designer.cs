@@ -30,24 +30,27 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addItem1 = new ELS.AddItem();
+            this.queue_list1 = new ELS.queue_list();
             this.edit_Item1 = new ELS.Edit_Item();
-            this.addItem1 = new ELS.AddItem(this);
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.item_no = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.item_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.panel1);
@@ -55,7 +58,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1000, 744);
@@ -66,42 +69,29 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Black;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(743, 302);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::ELS.Properties.Resources.Sync_32px;
+            this.button4.Location = new System.Drawing.Point(793, 302);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(234, 52);
+            this.button4.Size = new System.Drawing.Size(187, 52);
             this.button4.TabIndex = 6;
             this.button4.Text = "Refresh List";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(503, 302);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(234, 52);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Check Item Queue";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(edit_Item1);
-            this.panel1.Controls.Add(addItem1);
+            this.panel1.Controls.Add(this.addItem1);
+            this.panel1.Controls.Add(this.queue_list1);
+            this.panel1.Controls.Add(this.edit_Item1);
             this.panel1.Location = new System.Drawing.Point(18, 390);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 348);
             this.panel1.TabIndex = 4;
-            // 
-            // edit_Item1
-            // 
-            this.edit_Item1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_Item1.Location = new System.Drawing.Point(0, 0);
-            this.edit_Item1.Margin = new System.Windows.Forms.Padding(6);
-            this.edit_Item1.Name = "edit_Item1";
-            this.edit_Item1.Size = new System.Drawing.Size(964, 348);
-            this.edit_Item1.TabIndex = 1;
             // 
             // addItem1
             // 
@@ -110,30 +100,30 @@
             this.addItem1.Margin = new System.Windows.Forms.Padding(6);
             this.addItem1.Name = "addItem1";
             this.addItem1.Size = new System.Drawing.Size(964, 348);
-            this.addItem1.TabIndex = 0;
+            this.addItem1.TabIndex = 3;
             this.addItem1.Visible = false;
             // 
-            // button2
+            // queue_list1
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(263, 302);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 52);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Edit Item";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.queue_list1.BackColor = System.Drawing.Color.Transparent;
+            this.queue_list1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.queue_list1.ForeColor = System.Drawing.Color.White;
+            this.queue_list1.Location = new System.Drawing.Point(0, 0);
+            this.queue_list1.Margin = new System.Windows.Forms.Padding(6);
+            this.queue_list1.Name = "queue_list1";
+            this.queue_list1.Size = new System.Drawing.Size(964, 348);
+            this.queue_list1.TabIndex = 2;
+            this.queue_list1.Visible = false;
             // 
-            // button1
+            // edit_Item1
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(23, 302);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 52);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add Item";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.edit_Item1.BackColor = System.Drawing.Color.White;
+            this.edit_Item1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_Item1.Location = new System.Drawing.Point(0, 0);
+            this.edit_Item1.Margin = new System.Windows.Forms.Padding(6);
+            this.edit_Item1.Name = "edit_Item1";
+            this.edit_Item1.Size = new System.Drawing.Size(964, 348);
+            this.edit_Item1.TabIndex = 1;
             // 
             // label1
             // 
@@ -181,15 +171,79 @@
             this.quantity.Text = "Quantity";
             this.quantity.Width = 199;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Black;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::ELS.Properties.Resources.Print_32px;
+            this.button5.Location = new System.Drawing.Point(600, 302);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(187, 52);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Print";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Black;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::ELS.Properties.Resources.Administrative_Tools_32px;
+            this.button3.Location = new System.Drawing.Point(407, 302);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(187, 52);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Check Item Queue";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::ELS.Properties.Resources.Edit_Property_32px;
+            this.button2.Location = new System.Drawing.Point(214, 302);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(187, 52);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Edit Item";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::ELS.Properties.Resources.Add_New_64px1;
+            this.button1.Location = new System.Drawing.Point(21, 302);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(187, 52);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add Item";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LenderMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LenderMainForm";
@@ -215,10 +269,12 @@
         private System.Windows.Forms.ColumnHeader item_no;
         private System.Windows.Forms.ColumnHeader item_name;
         private System.Windows.Forms.ColumnHeader quantity;
-        private AddItem addItem1;
         private System.Windows.Forms.ColumnHeader description;
         private Edit_Item edit_Item1;
         public System.Windows.Forms.ListView listView1;
         public System.Windows.Forms.Button button4;
+        private queue_list queue_list1;
+        private AddItem addItem1;
+        public System.Windows.Forms.Button button5;
     }
 }

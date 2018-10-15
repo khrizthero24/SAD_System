@@ -118,18 +118,19 @@ namespace ELS
             addItem1.item_quantity.Value = 1;
             addItem1.isdefault = true;
             edit_Item1.Visible = false;
+            queue_list1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            addItem1.Visible = false;
-            
+        {            
             edit_Item1.Visible = true;
             edit_Item1.button1.Enabled = true;
             edit_Item1.button2.Enabled = true;
             edit_Item1.item_description.Enabled = true;
             edit_Item1.item_name.Enabled = true;
             edit_Item1.item_quantity.Enabled = true;
+            addItem1.Visible = false;
+            queue_list1.Visible = false;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -160,16 +161,41 @@ namespace ELS
                 LII(itemno);
             }
             edit_Item1.Visible = true;
+            addItem1.Visible = false;
+            queue_list1.Visible = false;
             edit_Item1.button1.Enabled = false;
             edit_Item1.button2.Enabled = false;
             edit_Item1.item_description.Enabled = false;
             edit_Item1.item_name.Enabled = false;
             edit_Item1.item_quantity.Enabled = false;
+            
         }
 
         public void button4_Click(object sender, EventArgs e)
         {
             Populate_ListView("select item_no,item_name,description,quantity from item_list");
+            edit_Item1.item_name.Text = "";
+            edit_Item1.item_description.Text = "";
+            edit_Item1.item_quantity.Value = 0;
+            edit_Item1.item_pic.BackgroundImage = ELS.Properties.Resources._default;
+            edit_Item1.item_pic.BackgroundImageLayout = ImageLayout.Stretch;
+            edit_Item1.Visible = true;
+            addItem1.Visible = false;
+            queue_list1.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            queue_list1.Visible = true;
+            queue_list1.Populate_ListView();
+            edit_Item1.Visible = false;
+            addItem1.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LendReport lendreport = new LendReport();
+            lendreport.Show();
         }
     }
 }
